@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('peta', [PetaController::class, 'index']);
+
+Route::get('peta/pemanduwisata', [PetaController::class, 'create']);

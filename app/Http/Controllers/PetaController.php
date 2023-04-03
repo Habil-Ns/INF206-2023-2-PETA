@@ -11,7 +11,7 @@ class PetaController extends Controller
      */
     public function index()
     {
-        return view ('peta.index');
+        return view('peta.beranda');
     }
 
     /**
@@ -19,7 +19,7 @@ class PetaController extends Controller
      */
     public function create()
     {
-        //
+        return view('peta.pemanduwisata');
     }
 
     /**

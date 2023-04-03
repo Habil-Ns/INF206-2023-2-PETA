@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@yield('title')</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+<body>
 <header class="head" id="header">
         <nav class="container rows navigation">
             <div class="nav_brand">
@@ -25,7 +35,7 @@
                     </li>
                     <li class="nav_item">
                         <a href="#" class="nav_link">
-                            <img src="image/user.png" alt="profile" width=56px height=56px>
+                            <img src="{{ asset('images/user.png') }}" alt="User" width=56px height=56px>
                         </a>
                     </li>
                 </ul>
@@ -34,3 +44,8 @@
 
         @yield('content')
     </header>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
+
+
