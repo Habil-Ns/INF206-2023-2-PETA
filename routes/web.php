@@ -21,3 +21,5 @@ Route::get('/', function () {
 Route::get('peta', [PetaController::class, 'index']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'create']);
+
+Route::get('peta/user/detail', [PetaController::class, 'detail']);

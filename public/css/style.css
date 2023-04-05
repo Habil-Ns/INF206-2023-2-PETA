@@ -16,7 +16,8 @@
     --number-color: #E2F4FF;
     --button-tolak-color: #EB5353;
     --text-color: #000000;
-    --text-color-second: #515151;
+    --text-second-color: #515151;
+    --text-label-color: #5B636A;
     --text-font: 'Poppins', sans-serif;
     --title-font: 'Source Serif Pro', serif;
     --brand-font: 'Patua One', cursive;
@@ -24,7 +25,8 @@
     --brand-size: 1.45rem;
     --nav-size: 0.938rem;
     --title-size: 1.875rem;
-    --text-size: 1.5rem; 
+    --text-size: 1.5rem;
+    --label-size: 1.275rem;
     --title-weight: 700;
     --button-weight: 600;
     --text-weight: 400;
@@ -121,10 +123,10 @@ span{
 }
 
 .content p{
-    color: var(--text-color-second);
+    color: var(--text-second-color);
 }
 
-/* Halaman Pemandu Wisata */
+/*=======================  Halaman Pemandu Wisata ===========================*/
 .title h1{
     font-family: var(--title-font);
     font-weight: var(--title-font);
@@ -177,3 +179,36 @@ span{
 .btn-detail:hover{
     opacity: .8;
 }
+
+/* =========================== Halaman Detail Pemandu ================================= */
+.detail-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #76E1BC;
+    border-radius: 3.125rem;
+    padding: 1.8rem 3rem;
+    margin: 2rem 0;
+}
+
+.mb-1 label{
+    font-family: var(--text-font);
+    font-size: var(--label-size);
+    color: var(--text-label-color);
+    font-weight: var(--text-weight);
+}
+
+.biodata-pemandu {
+    float: left;
+    width: 80%;
+}
+
+.foto-pemandu {
+    margin-top: 1.9rem;
+    float: right;
+}
+
+.form-control{
+    border: 1px solid black;
+}
+
+

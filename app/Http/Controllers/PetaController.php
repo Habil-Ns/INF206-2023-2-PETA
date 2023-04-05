@@ -22,6 +22,11 @@ class PetaController extends Controller
         return view('peta.pemanduwisata');
     }
 
+    public function detail()
+    {
+        return view('peta.detail_pemanduwisata');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
