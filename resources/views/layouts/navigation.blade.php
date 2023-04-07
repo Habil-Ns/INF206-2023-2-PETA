@@ -39,7 +39,7 @@
                         <a href="#" class="nav_link">Pemandu Wisata</a>
                     </li>
                     <li class="nav_item">
-                        <a href="#" class="nav_link">Hubungi Kami</a>
+                        <a href="peta.hubungikami" class="nav_link">Hubungi Kami</a>
                     </li>
                     <li class="nav_item">
                         <a href="#" class="nav_link" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -32,7 +32,7 @@ class PetaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return view('peta.hubungikami');
     }
 
     /**

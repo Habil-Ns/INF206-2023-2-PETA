@@ -211,4 +211,12 @@ span{
     border: 1px solid black;
 }
 
-
+.hubungi{
+    padding: 30px;
+    text-align: center;
+    font-family: var(--title-font);
+    font-weight: var(--title-font);
+    font-size: 28px;
+    padding-bottom: .4rem;
+    color: var(--text-color);
+}
