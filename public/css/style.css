@@ -40,7 +40,6 @@ span{
     color: var(--brand-color);
 }
 
-
 /* =========================== NAV ============================== */
 .navigation{
     display: flex;
@@ -129,7 +128,7 @@ span{
 /*=======================  Halaman Pemandu Wisata ===========================*/
 .title h1{
     font-family: var(--title-font);
-    font-weight: var(--title-font);
+    font-weight: var(--title-weight);
     font-size: var(--title-size);
     padding-bottom: .4rem;
     border-bottom: 1px solid black;
@@ -211,4 +210,15 @@ span{
     border: 1px solid black;
 }
 
+/* ====================== Tempat Wisata ========================== */
+.blurb h1{
+    font-family: var(--brand-font);
+    font-size: var(--title-size);
+}
+
+.blurb p{
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+    line-height: 1.7;
+}
 

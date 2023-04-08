@@ -27,6 +27,32 @@ class PetaController extends Controller
         return view('peta.detail_pemanduwisata');
     }
 
+
+    public function museum()
+    {
+        return view('peta.wisata_museum');
+    }
+
+    public function sejarahBudaya()
+    {
+        return view('peta.wisata_sejarah_budaya');
+    }
+
+    public function religi()
+    {
+        return view('peta.wisata_religi');
+    }
+
+    public function kuliner()
+    {
+        return view('peta.wisata_kuliner');
+    }
+
+    public function alam()
+    {
+        return view('peta.wisata_alam');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
