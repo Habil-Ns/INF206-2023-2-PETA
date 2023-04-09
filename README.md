@@ -1,9 +1,13 @@
-# Website Pemandu Wisata Dengan Laravel
+# Travel Website Dengan Laravel
 
-### Unduh Project
+## Preview
+
+![preview img](/preview.png)
+
+### Download Project
 
 ```bash
-  git clone  project-name
+  git clone https://github.com/abdulaziz-m5u/travel-website-laravel.git project-name
 ```
 
 Go to the project directory
@@ -23,7 +27,7 @@ Go to the project directory
 ```
 
 ```bash
-    php artisan migrate:fresh --seed
+    php artisan artisan migrate:fresh --seed
 ```
 
 ```bash

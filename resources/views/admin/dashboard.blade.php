@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<title>{{ 'Beranda' }}</title>
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -12,7 +13,7 @@
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+    
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
@@ -23,6 +24,7 @@
                             <p class="card-text">
                                 {{ __('Selamat datang') }} {{ auth()->user()->name }} !
                             </p>
+
                         </div>
                     </div>
                 </div>

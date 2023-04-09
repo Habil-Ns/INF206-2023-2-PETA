@@ -75,7 +75,7 @@
             <div class="footer__container container grid">
                 <div>
                     <a href="{{ route('homepage') }}" class="footer__logo">
-                        G<i class="bx bxs-map"></i> TRAVEL
+                        PET<i class="bx bxs-map"></i>
                     </a>
                     <p class="footer__description">
                         Our vision is to help people find the <br />
@@ -153,7 +153,7 @@
 
             <div class="footer__info container">
                 <span class="footer__copy">
-                    &#169; ypcode. All rigths reserved
+                    &#169; peta. All rigths reserved
                 </span>
                 <div class="footer__privacy">
                     <a href="#">Terms & Agreements</a>

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<title>{{ 'Tambah Hotel' }}</title>
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">

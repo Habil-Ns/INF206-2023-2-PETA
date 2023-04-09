@@ -13,7 +13,7 @@ class PemesananController extends Controller
         Pemesanan::create($request->validated());
 
         return redirect()->back()->with([
-            'message' => "Success, we'll process your booking"
+            'message' => "Berhasil, kami akan memproses pemesanan anda"
         ]);
     }
 }
