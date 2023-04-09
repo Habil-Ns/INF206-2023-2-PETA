@@ -46,14 +46,14 @@
                 </a>
             </li>
 
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a href="{{ route('admin.hubungi_kamis.index') }}" class="nav-link">
                     <i class="nav-icon fa fa-hotel"></i>
                     <p>
                         {{ __('Hubungi Kami') }}
                     </p>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item">
                 <a href="#" class="nav-link">
