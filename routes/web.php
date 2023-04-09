@@ -1,6 +1,7 @@
 <?php
-
+namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PetaControllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('peta/login, [Controller::class, 'login']);
+
+Route::get('peta/login', [PetaControllers::class, 'login']);
+
+Route::get('peta/register', [PetaControllers::class, 'register']);
+
+Route::get('peta/petabandaaceh', [PetaControllers::class, 'peta']);
