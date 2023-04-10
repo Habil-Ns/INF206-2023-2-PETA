@@ -2,13 +2,13 @@
 
 
 @section('title')
-    PETA-Pemandu Wisata | Pemandu Wisata
+    PETA-Pemandu Wisata | Wisata Banda Aceh
 @endsection
 
 
 @section('content')
-    <div class="container">
-        <div class="row" id="wisata_alam">
+    <div class="container" id="wisata_alam">
+        <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/pantai_ulee.jpg')}}"  alt="Pantai Ulee Lheue" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center mt-3" id="wisata_museum">
+        <div class="row align-items-center mt-3">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/Bukit_LhokEumpe.jpeg')}}"  alt="Bukit Lhok Eumpe" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center my-3" id="wisata_museum">
+        <div class="row align-items-center my-3">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/pantai_aluenaga.jpg')}}"  alt="Pantai Alue Naga" srcset="" class="img-fluid" width="458px" height="329px">
             </div>

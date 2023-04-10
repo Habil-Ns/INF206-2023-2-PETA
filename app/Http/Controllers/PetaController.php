@@ -53,6 +53,11 @@ class PetaController extends Controller
         return view('peta.wisata_alam');
     }
 
+    public function hotel()
+    {
+        return view('peta.hotel');
+    }
+
     /**
      * Store a newly created resource in storage.
      */

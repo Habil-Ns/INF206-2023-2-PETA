@@ -2,13 +2,13 @@
 
 
 @section('title')
-    PETA-Pemandu Wisata | Pemandu Wisata
+    PETA-Pemandu Wisata | Wisata Banda Aceh
 @endsection
 
 
 @section('content')
-    <div class="container">
-        <div class="row" id="wisata_sejarah_budaya">
+    <div class="container" id="wisata_sejarah_budaya">
+        <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/Kerkhof.jpg')}}"  alt="Kerkhof Peucut" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center mt-3" id="wisata_museum">
+        <div class="row align-items-center mt-3">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/tamansari_gunongan.png')}}"  alt="Taman Sari Gunongan" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center my-3" id="wisata_museum">
+        <div class="row align-items-center my-3">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/kapal_apunglampulo.jpg')}}"  alt="Kapal Apung Lampulo" srcset="" class="img-fluid" width="458px" height="329px">
             </div>

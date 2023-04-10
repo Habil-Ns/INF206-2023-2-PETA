@@ -33,3 +33,5 @@ Route::get('peta/wisata/wisatareligi', [PetaController::class, 'religi']);
 Route::get('peta/wisata/wisatakuliner', [PetaController::class, 'kuliner']);
 
 Route::get('peta/wisata/wisataalam', [PetaController::class, 'alam']);
+
+Route::get('peta/galeri/hotel', [PetaController::class, 'hotel']);
