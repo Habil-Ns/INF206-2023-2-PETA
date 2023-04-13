@@ -44,7 +44,6 @@ span{
 .navigation{
     display: flex;
     justify-content: space-between;
-    /* width: 100%; */
 }
 
 .nav_brand{
@@ -68,6 +67,7 @@ span{
 
 .nav_item {
     margin-right: 1rem;
+    position: relative;
 }
 
 .nav_link{
@@ -79,39 +79,61 @@ span{
     font-family: var(--text-font);
 }
 
-.nav_link:hover{
-    color: #000000;
+.nav_link:hover, .submenu a:hover{
+    color: var(--text-color);
     opacity: .7;
+}
+
+.submenuwisata, .submenugaleri, .submenupemandu, .submenupengguna{
+    display: none;
+}
+
+.submenuwisata.active, .submenugaleri.active, .submenupemandu.active, .submenupengguna.active{
+    display: block;
+}
+
+.submenu a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    top: calc(70% + 10px);
+    left: 50%;
+    width: 170px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow-y: scroll;
+    max-height: 80px;
 }
 
 /*================== Header ==========================*/
 
 .header{
-    padding: 1rem 0 5rem 0;
-    display: flex;
-    justify-content: space-between;
-    max-height: 500px;
+    /* padding: 1.8rem 0 5rem 0; */
+    padding-bottom: 5rem;
+    max-height: 800px;
 }
 
 .rows{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .content{
     max-width: 1000px;
     color: var(--text-color);
-    width: 60%;
+    width: 95%;
     align-self: center;
-}
-
-.image_content {
-    display: flex;
-    width: 75%;
-    height: 80%;
-    margin-left: 1rem;
-    justify-content: flex-end;
-    align-self: center;
+    margin: 1.1rem 2rem 0 0;
 }
 
 .header_content{
@@ -120,6 +142,39 @@ span{
     font-weight: var(--title-weight);
     color: var(--text-color);
 }
+
+.image_content {
+    display: flex;
+    width: 10%;
+    height: 10%;
+    margin-left: 1rem;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.btn-pesan, .btn-detail{
+    padding: .3em 1.3em;
+    border-radius: 10px;
+    background-color: #1BB580;
+    border: none;
+}
+
+.btn-pesan a{
+    text-align: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--title-font);
+    font-weight: var(--title-font);
+}
+
+.btn-pesan a:hover, .btn-detail a:hover{
+    color: var(--text-color);
+}
+
+.btn-pesan:hover, .btn-detail:hover{
+    opacity: .7;
+}
+
 
 .content p{
     color: var(--text-second-color);
@@ -147,7 +202,7 @@ span{
 .left-content{
     font-family: var(--text-font);
     font-size: 1.375rem;
-    color: #000000;
+    color: var(--text-color);
     margin: 1rem 1rem 0 2rem;
 }
 
@@ -170,14 +225,10 @@ span{
 }
 
 .btn-detail{
-    margin-top: 1rem;
     background-color: var(--button-color);
     border-color: var(--button-color);
 }
 
-.btn-detail:hover{
-    opacity: .8;
-}
 
 /* =========================== Halaman Detail Pemandu ================================= */
 .detail-content {

@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <div class="container" id="wisata_alam">
+    <div class="container mt-5" id="wisata_alam">
         <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/pantai_ulee.jpg')}}"  alt="Pantai Ulee Lheue" srcset="" class="img-fluid" width="458px" height="329px">
@@ -55,7 +55,7 @@
 
         <div class="row align-items-center my-3">
             <div class="col-md-6 mt-3 order-1">
-                <img src="{{asset ('images/Airterjun_kutamalaka.webp')}}" alt="Air Terjun Kuta Malaka" srcset="" class="img-fluid" width="458px" height="329px">
+                <img src="{{asset ('images/Airterjun_kutamalaka.jpg')}}" alt="Air Terjun Kuta Malaka" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
             <div class="col-md-6 order-2 d-flex justify-content-end">
                 <div class="justify-content-center text-center">
