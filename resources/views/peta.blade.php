@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Peta Banda Aceh</title>
-    <link rel="stylesheet" href="peta.css">
-  </head>
-  <body>
-    <h1></h1>
+@extends('layout.navigation')
+
+
+
+@section('content')
+<div class="container">
+    <h1>peta</h1>
     <img src="{{asset ('image/map.png')}}" alt="Peta Banda Aceh" width="900" height="500">
     <p>Peta Banda Aceh</p>
     <div id="map"></div>
@@ -28,7 +27,7 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"
-    async defer></script>
-  </body>
-</html>
+    <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"async defer></script>
+  </div>
+    @endsection
+ 

@@ -15,4 +15,7 @@ class PetaControllers extends Controller
     public function peta(){
         return view('peta');
     }
+    public function detailpemandu(){
+        return view('detailpemandu');
+    }
 }

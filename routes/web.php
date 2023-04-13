@@ -25,3 +25,5 @@ Route::get('peta/login', [PetaControllers::class, 'login']);
 Route::get('peta/register', [PetaControllers::class, 'register']);
 
 Route::get('peta/petabandaaceh', [PetaControllers::class, 'peta']);
+
+Route::get('peta/detailpemandu', [PetaControllers::class, 'detailpemandu']);

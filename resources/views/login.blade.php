@@ -4,7 +4,7 @@
     <title>Halaman Login</title>
     <link rel="stylesheet" href="{{asset ('css/css_login.css')}}">
   </head>
-  <img src= "{{asset ('image/RPL2.jpg')}}" alt="Gambar" class="card-img" width="1000" height="550">
+  <img src= "{{asset ('image/misal.jpg')}}" alt="Gambar" class="card-img" width="1000" height="550">
 
   <body>
    
