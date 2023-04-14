@@ -1,11 +1,6 @@
-# Travel Website Dengan Laravel
+# PETA Website Dengan Laravel
 
 ## Preview
-
-
-### Download Project
-
-```
 
 Go to the project directory
 
