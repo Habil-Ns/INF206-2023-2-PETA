@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@400;600&family=Source+Serif+Pro:wght@700&display=swap');
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --header-height: 3rem;
+    --first-color: #76E1BC;
+    --second-color: #A8D672;
+    --input-color: #e2f4ff;
+    --brand-color: #1BB580;
+    --button-color: #2BAFD9;
+    --button-login-color: #29AA26;
+    --number-color: #E2F4FF;
+    --button-tolak-color: #EB5353;
+    --text-color: #000000;
+    --text-second-color: #515151;
+    --text-label-color: #5B636A;
+    --text-font: 'Poppins', sans-serif;
+    --title-font: 'Source Serif Pro', serif;
+    --brand-font: 'Patua One', cursive;
+    --title-main-size: 4.063rem; 
+    --brand-size: 1.45rem;
+    --nav-size: 0.938rem;
+    --title-size: 1.875rem;
+    --text-size: 1.5rem;
+    --label-size: 1.275rem;
+    --title-weight: 700;
+    --button-weight: 600;
+    --text-weight: 400;
+}
+
+ul{
+    list-style: none;
+}
+
+span{
+    color: var(--brand-color);
+}
+
+
+/* =========================== NAV ============================== */
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+}
+
+.nav_brand{
+    font-family: var(--brand-font);
+    font-size: var(--brand-size);
+    color: #000000;
+    margin-top: .8rem;
+}
+
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+}
+
+.nav_item {
+    margin-right: 1rem;
+}
+
+.nav_link{
+    color: var(--text-color);
+    padding: .2rem .5rem;
+    text-decoration: none;
+    font-size: var(--nav-size);
+    display: inline-block; 
+    font-family: var(--text-font);
+}
+
+.nav_link:hover{
+    color: #000000;
+    opacity: .7;
+}
+
+/*================== Header ==========================*/
+
+.header{
+    padding: 1rem 0 5rem 0;
+    display: flex;
+    justify-content: space-between;
+    max-height: 500px;
+}
+
+.rows{
+    display: flex;
+    flex-direction: row;
+}
+
+.content{
+    max-width: 1000px;
+    color: var(--text-color);
+    width: 60%;
+    align-self: center;
+}
+
+.image_content {
+    display: flex;
+    width: 75%;
+    height: 80%;
+    margin-left: 1rem;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.header_content{
+    font-size: var(--title-main-size);
+    font-family: var(--title-font);
+    font-weight: var(--title-weight);
+    color: var(--text-color);
+}
+
+.content p{
+    color: var(--text-second-color);
+}
+
+/*=======================  Halaman Pemandu Wisata ===========================*/
+.title h1{
+    font-family: var(--title-font);
+    font-weight: var(--title-font);
+    font-size: var(--title-size);
+    padding-bottom: .4rem;
+    border-bottom: 1px solid black;
+    color: var(--text-color);
+}
+
+.daftar-pemandu{
+    margin-top: 2rem;
+    background-color: var(--second-color);
+    box-shadow: 0px 6px 6spx -5px rgba(0, 0, 0, 0.75);
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-content{
+    font-family: var(--text-font);
+    font-size: 1.375rem;
+    color: #000000;
+    margin: 1rem 1rem 0 2rem;
+}
+
+.right-content{
+    margin: .14rem .89rem;
+    display: flex;
+}
+
+.button-detail{
+    align-self: flex-end;
+    margin: 0 2rem .7rem 0;
+}
+
+.detail-pemandu{
+    font-size: 1.05rem;
+    font-family: var(--title-font);
+    padding: .4rem 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.btn-detail{
+    margin-top: 1rem;
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+}
+
+.btn-detail:hover{
+    opacity: .8;
+}
+
+/* =========================== Halaman Detail Pemandu ================================= */
+.detail-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #76E1BC;
+    border-radius: 3.125rem;
+    padding: 1.8rem 3rem;
+    margin: 2rem 0;
+}
+
+.mb-1 label{
+    font-family: var(--text-font);
+    font-size: var(--label-size);
+    color: var(--text-label-color);
+    font-weight: var(--text-weight);
+}
+
+.biodata-pemandu {
+    float: left;
+    width: 80%;
+}
+
+.foto-pemandu {
+    margin-top: 1.9rem;
+    float: right;
+}
+
+.form-control{
+    border: 1px solid black;
+}
+
+.hubungi{
+    padding: 30px;
+    text-align: center;
+    font-family: var(--title-font);
+    font-weight: var(--title-font);
+    font-size: 28px;
+    padding-bottom: .4rem;
+    color: var(--text-color);
+}
