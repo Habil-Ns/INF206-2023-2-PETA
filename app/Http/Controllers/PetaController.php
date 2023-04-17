@@ -32,15 +32,15 @@ class PetaController extends Controller
      */
     public function store()
     {
-        return view('peta.hubungikami');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function hub()
     {
-        //
+        return view('peta.hubungikami');
     }
 
     /**

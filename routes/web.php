@@ -24,4 +24,4 @@ Route::get('peta/pemanduwisata', [PetaController::class, 'create']);
 
 Route::get('peta/user/detail', [PetaController::class, 'detail']);
 
-Route::get('peta/hubungikami', [PetaController::class, 'store']);
+Route::get('peta/hubungikami', [PetaController::class, 'hub']);
