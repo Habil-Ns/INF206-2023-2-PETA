@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5" id="daftar_pemandu">
         <div class="title">
             <h1>Daftar Pemandu Wisata</h1>
         </div>
@@ -17,7 +17,7 @@
             <div class="right-content">
                 <div class="button-detail">
                     <button class="btn-detail">
-                        <a href="#detailpemandu" class="detail-pemandu">Detail</a>
+                        <a href="{{url ("peta")}}" class="detail-pemandu">Detail</a>
                     </button>
                 </div>
                 <div class="profile-pemandu">
