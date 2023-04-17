@@ -61,7 +61,7 @@ class PetaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -69,9 +69,9 @@ class PetaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function hub()
     {
-        //
+        return view('peta.hubungikami');
     }
 
     /**
