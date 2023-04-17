@@ -41,11 +41,6 @@ span{
 }
 
 /* =========================== NAV ============================== */
-.navigation{
-    display: flex;
-    justify-content: space-between;
-}
-
 .nav_brand{
     font-family: var(--brand-font);
     font-size: var(--brand-size);
@@ -53,20 +48,16 @@ span{
     margin-top: .8rem;
 }
 
-.nav{
-    height: var(--header-height);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .nav_list{
     display: flex;
     align-items: center;
 }
 
-.nav_item {
+.nav_item:not(:last-child) {
     margin-right: 1rem;
+}
+
+.nav_item{
     position: relative;
 }
 
@@ -131,7 +122,7 @@ span{
 .content{
     max-width: 1000px;
     color: var(--text-color);
-    width: 95%;
+    width: 100%;
     align-self: center;
     margin: 1.1rem 2rem 0 0;
 }
@@ -167,14 +158,14 @@ span{
     font-weight: var(--title-font);
 }
 
-.btn-pesan a:hover, .btn-detail a:hover{
+.btn-pesan a:hover, .btn-detail a:hover, .nav_item a:hover{
     color: var(--text-color);
+    text-decoration: none;
 }
 
 .btn-pesan:hover, .btn-detail:hover{
     opacity: .7;
 }
-
 
 .content p{
     color: var(--text-second-color);
