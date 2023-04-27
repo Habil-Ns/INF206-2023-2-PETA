@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class PetaController extends Controller
 {
+<<<<<<< HEAD
     /**
      * Display a listing of the resource.
      */
@@ -71,3 +72,15 @@ class PetaController extends Controller
 
 
    
+=======
+    public function pendaftaran()
+    {
+        return view('peta.pendaftaran_pemandu');
+    }
+
+    public function sejarah()
+    {
+        return view('peta.sejarah');
+    }
+}
+>>>>>>> 2108107010069-Askar

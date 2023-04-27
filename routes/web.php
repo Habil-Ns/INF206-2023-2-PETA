@@ -28,3 +28,7 @@ Route::get('peta/register', [PetaController::class, 'register']);
 Route::get('peta/galeri/petabandaaceh', [PetaController::class, 'petabandaaceh']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
+
+Route::get('peta/pemanduwisata/pendaftaran', [PetaController::class, 'pendaftaran']);
+
+Route::get('peta/sejarah', [PetaController::class, 'sejarah']);
