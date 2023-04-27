@@ -12,6 +12,17 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('swiper/swiper-bundle.css') }}">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- BootStrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
 <body>
     <header class="head" id="header">
         <nav class="container rows navigation">
@@ -25,12 +36,14 @@
                     </li>
                     <li class="nav_item">
                         <a href="{{url ("peta/sejarah")}}" class="nav_link">Sejarah</a>
+                        <a href="#" class="nav_link">Sejarah</a>
                     </li>
                     <li class="nav_item">
                         <a href="#" class="nav_link">Galeri</a>
                         <ul class="submenu submenugaleri">
                             <li><a href="{{url ("peta/galeri/hotel")}}">Hotel</a></li>
                             <li><a href="{{url ("peta/galeri/petabandaaceh")}}">Peta Banda Aceh</a></li>
+                            <li><a href="#">Peta Banda Aceh</a></li>
                         </ul>
                     </li>
                     <li class="nav_item">
@@ -47,6 +60,7 @@
                         <a href="#" class="nav_link">Pemandu Wisata</a>
                         <ul class="submenu submenupemandu">
                             <li><a href="{{url ("peta/pemanduwisata/pendaftaran")}}">Pendaftaran</a></li>
+                            <li><a href="#">Pendaftaran</a></li>
                             <li><a href="{{url ("peta/pemanduwisata")}}">Daftar Pemandu</a></li>
                         </ul>
                     </li>
@@ -62,6 +76,9 @@
                             <li><a href="{{url ("peta/login")}}">Masuk Sebagai Pemandu Wisata</a></li>
                         </ul>
                         <!-- <a href="#" class="nav_link" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <li><a href="#">Masuk Sebagai Pemandu Wisata</a></li>
+                        </ul>
+                        <a href="#" class="nav_link" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="{{ asset('images/profile_pemandu.jpg') }}" alt="User" width=56px height=56px>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -73,6 +90,7 @@
                             <div class="dropdown-divider"></div>
                                 <button class="dropdown-item" href="#">Keluar</button>
                          </div> -->
+                         </div>
                     </li>
                 </ul>
             </div>

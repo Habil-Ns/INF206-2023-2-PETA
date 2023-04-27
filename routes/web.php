@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PetaController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +31,22 @@ Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
 Route::get('peta/pemanduwisata/pendaftaran', [PetaController::class, 'pendaftaran']);
 
 Route::get('peta/sejarah', [PetaController::class, 'sejarah']);
+Route::get('peta', [PetaController::class, 'index']);
+
+Route::get('peta/pemanduwisata', [PetaController::class, 'create']);
+
+Route::get('peta/user/detail', [PetaController::class, 'detail']);
+
+Route::get('peta/wisata/wisatamuseum', [PetaController::class, 'museum']);
+
+Route::get('peta/wisata/wisatasejarahbudaya', [PetaController::class, 'sejarahBudaya']);
+
+Route::get('peta/wisata/wisatareligi', [PetaController::class, 'religi']);
+
+Route::get('peta/wisata/wisatakuliner', [PetaController::class, 'kuliner']);
+
+Route::get('peta/wisata/wisataalam', [PetaController::class, 'alam']);
+
+Route::get('peta/galeri/hotel', [PetaController::class, 'hotel']);
+
+Route::get('peta/hubungikami', [PetaController::class, 'hub']);

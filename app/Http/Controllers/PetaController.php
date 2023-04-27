@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class PetaController extends Controller
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 2108107010089-HabilNs
     /**
      * Display a listing of the resource.
      */
@@ -15,6 +18,7 @@ class PetaController extends Controller
         return view('peta.beranda');
     }
 
+<<<<<<< HEAD
     public function navigation()
     {
         return view('layouts.navigation');
@@ -40,11 +44,72 @@ class PetaController extends Controller
     }
 
     public function pemanduwisata()
+=======
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+>>>>>>> 2108107010089-HabilNs
     {
         return view('peta.pemanduwisata');
     }
 
+<<<<<<< HEAD
     
+=======
+    public function detail()
+    {
+        return view('peta.detail_pemanduwisata');
+    }
+
+
+    public function museum()
+    {
+        return view('peta.wisata_museum');
+    }
+
+    public function sejarahBudaya()
+    {
+        return view('peta.wisata_sejarah_budaya');
+    }
+
+    public function religi()
+    {
+        return view('peta.wisata_religi');
+    }
+
+    public function kuliner()
+    {
+        return view('peta.wisata_kuliner');
+    }
+
+    public function alam()
+    {
+        return view('peta.wisata_alam');
+    }
+
+    public function hotel()
+    {
+        return view('peta.hotel');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store()
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function hub()
+    {
+        return view('peta.hubungikami');
+    }
+
+>>>>>>> 2108107010089-HabilNs
     /**
      * Show the form for editing the specified resource.
      */
@@ -69,6 +134,7 @@ class PetaController extends Controller
         //
     }
 }
+<<<<<<< HEAD
 
 
    
@@ -84,3 +150,5 @@ class PetaController extends Controller
     }
 }
 >>>>>>> 2108107010069-Askar
+=======
+>>>>>>> 2108107010089-HabilNs
