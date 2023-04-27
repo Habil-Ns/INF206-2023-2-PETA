@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class PetaController extends Controller
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2108107010089-HabilNs
     /**
      * Display a listing of the resource.
      */
@@ -18,48 +19,33 @@ class PetaController extends Controller
         return view('peta.beranda');
     }
 
-<<<<<<< HEAD
-    public function navigation()
-    {
-        return view('layouts.navigation');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
-    public function login()
-    {
-        return view('peta.login');
-    }
-
-    public function register()
-    {
-        return view('peta.register');
-    }
-
-
-    public function petabandaaceh()
-    {
-        return view('peta.peta_bandaaceh');
-    }
-
     public function pemanduwisata()
-=======
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
->>>>>>> 2108107010089-HabilNs
     {
-        return view('peta.pemanduwisata');
+        $registrations = DB::table('registrations')
+            ->select('nama', 'gambar', 'status')
+            ->where('status', '<>', 'Pending')
+            ->get();
+
+        $view_data = [
+            'registrations' => $registrations
+        ];
+
+        return view('peta.pemanduwisata', $view_data);
     }
 
-<<<<<<< HEAD
-    
-=======
-    public function detail()
+    public function detail(string $nama)
     {
-        return view('peta.detail_pemanduwisata');
+        $registration = DB::table('registrations')
+            ->select('id', 'nama', 'umur', 'gender', 'kontak', 'email', 'keahlian', 'kelebihan', 'kekurangan', 'gambar', 'status')
+            ->where('nama', $nama)
+            ->first();
+        $view_data = [
+            'registration' => $registration
+        ];
+        return view('peta.detail_pemanduwisata', $view_data);
     }
 
 
@@ -93,12 +79,79 @@ class PetaController extends Controller
         return view('peta.hotel');
     }
 
+    public function pendaftaran()
+    {
+        return view('peta.pendaftaran_pemandu');
+    }
+
+    public function sejarah()
+    {
+        return view('peta.sejarah');
+    }
     /**
      * Store a newly created resource in storage.
      */
-    public function store()
+    public function storeReg(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'username' => ['required', 'min:3', 'max:255', 'unique:users'],
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:3|max:255'
+        ]);
+
+        $validatedData['password'] = Hash::make($validatedData['password']);
+        User::create($validatedData);
+        $request->session()->flash('success', 'Berhasil daftar! Mohon login');
+        return redirect('peta/login');
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $pindah_gambar = $request->gambar;
+        $namafile_gambar = Str::random(40) . '.' . $pindah_gambar->getClientOriginalExtension();
+
+        $pindah_cv = $request->cv;
+        $namafile_cv = Str::random(40) . '.' .
+            $pindah_cv->getClientOriginalExtension();
+
+        $keahlian = implode(', ', $request->input('keahlian'));
+        $keahlian = str_replace('_', ' ', $keahlian);
+
+        $nama = $request->input('nama');
+        $umur = $request->input('umur');
+        $gender = $request->input('gender');
+        $kontak = $request->input('kontak');
+        $email = $request->input('email');
+        $kelebihan = $request->input('kelebihan');
+        $kekurangan = $request->input('kekurangan');
+
+        DB::table('registrations')->insert([
+            'nama' => $nama,
+            'umur' => $umur,
+            'gender' => $gender,
+            'kontak' => $kontak,
+            'email' => $email,
+            'keahlian' => $keahlian,
+            'kelebihan' => $kelebihan,
+            'kekurangan' => $kekurangan,
+            'cv' => $namafile_cv,
+            'gambar' => $namafile_gambar,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
+            'status' => 'Pending'
+        ]);
+
+        $pindah_cv->move(public_path() . '/cv', $namafile_cv);
+
+        $pindah_gambar->move(public_path() . '/gambar', $namafile_gambar);
+
+
+        // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
+        return view('user.registration_pending');
     }
 
     /**
@@ -109,7 +162,21 @@ class PetaController extends Controller
         return view('peta.hubungikami');
     }
 
->>>>>>> 2108107010089-HabilNs
+    public function login()
+    {
+        return view('peta.login');
+    }
+
+    public function register()
+    {
+        return view('peta.register');
+    }
+
+    public function petabandaaceh()
+    {
+        return view('peta.peta_bandaaceh');
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -133,22 +200,28 @@ class PetaController extends Controller
     {
         //
     }
-}
-<<<<<<< HEAD
 
-
-   
-=======
-    public function pendaftaran()
+    public function authenticate(Request $request)
     {
-        return view('peta.pendaftaran_pemandu');
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/dashboard');
+        }
+
+        return back()->with('loginError', 'Login gagal!');
     }
 
-    public function sejarah()
+    public function logout()
     {
-        return view('peta.sejarah');
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect('/peta');
     }
 }
->>>>>>> 2108107010069-Askar
-=======
->>>>>>> 2108107010089-HabilNs
