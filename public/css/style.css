@@ -1,0 +1,611 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@400;600&family=Source+Serif+Pro:wght@700&display=swap');
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --header-height: 3rem;
+    --first-color: #76E1BC;
+    --second-color: #A8D672;
+    --input-color: #e2f4ff;
+    --brand-color: #1BB580;
+    --button-color: #2BAFD9;
+    --button-login-color: #29AA26;
+    --number-color: #E2F4FF;
+    --button-tolak-color: #EB5353;
+    --text-color: #000000;
+    --text-second-color: #515151;
+    --text-label-color: #5B636A;
+    --text-font: 'Poppins', sans-serif;
+    --title-font: 'Source Serif Pro', serif;
+    --brand-font: 'Patua One', cursive;
+    --title-main-size: 4.063rem; 
+    --brand-size: 1.45rem;
+    --nav-size: 0.938rem;
+    --title-size: 1.875rem;
+    --label-size: 1.275rem;
+    --text-size: 1rem;
+    --title-weight: 700;
+    --button-weight: 600;
+    --text-weight: 400;
+}
+
+ul{
+    list-style: none;
+}
+
+span{
+    color: var(--brand-color);
+}
+
+/* =========================== NAV ============================== */
+.nav_brand{
+    font-family: var(--brand-font);
+    font-size: var(--brand-size);
+    color: #000000;
+    margin-top: .8rem;
+}
+
+.nav_list{
+    display: flex;
+    align-items: center;
+}
+
+.nav_item:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.nav_item{
+    position: relative;
+}
+
+.nav_link{
+    color: var(--text-color);
+    padding: .2rem .5rem;
+    text-decoration: none;
+    font-size: var(--nav-size);
+    display: inline-block; 
+    font-family: var(--text-font);
+}
+
+.nav_link:hover, .submenu a:hover{
+    color: var(--text-color);
+    opacity: .7;
+}
+
+.submenuwisata, .submenugaleri, .submenupemandu, .submenupengguna{
+    display: none;
+}
+
+.submenuwisata.active, .submenugaleri.active, .submenupemandu.active, .submenupengguna.active{
+    display: block;
+}
+
+.submenu a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    transform: translateX(-50%);
+    top: calc(70% + 10px);
+    left: 50%;
+    width: 170px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    overflow-y: scroll;
+    max-height: 80px;
+}
+
+/*================== Header ==========================*/
+
+.header{
+    /* padding: 1.8rem 0 5rem 0; */
+    padding-bottom: 5rem;
+    max-height: 800px;
+}
+
+.rows{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content{
+    max-width: 1000px;
+    color: var(--text-color);
+    width: 100%;
+    align-self: center;
+    margin: 1.1rem 2rem 0 0;
+}
+
+.header_content{
+    font-size: var(--title-main-size);
+    font-family: var(--title-font);
+    font-weight: var(--title-weight);
+    color: var(--text-color);
+}
+
+.image_content {
+    display: flex;
+    width: 10%;
+    height: 10%;
+    margin-left: 1rem;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.btn-pesan, .btn-detail{
+    padding: .3em 1.3em;
+    border-radius: 10px;
+    background-color: #1BB580;
+    border: none;
+}
+
+.btn-pesan a{
+    text-align: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--title-font);
+    font-weight: var(--title-font);
+}
+
+.btn-pesan a:hover, .btn-detail a:hover, .nav_item a:hover, .btn-kembali a:hover{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.btn-pesan:hover, .btn-detail:hover, .button-kembali:hover{
+    opacity: .7;
+}
+
+.content p{
+    color: var(--text-second-color);
+}
+
+/*=======================  Halaman Pemandu Wisata ===========================*/
+.title h1{
+    font-family: var(--title-font);
+    font-weight: var(--title-weight);
+    font-size: var(--title-size);
+    padding-bottom: .4rem;
+    border-bottom: 1px solid black;
+    color: var(--text-color);
+}
+
+.daftar-pemandu{
+    background-color: var(--second-color);
+    box-shadow: 0px 6px 6px -5px rgba(0, 0, 0, 0.75);
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-content{
+    font-family: var(--text-font);
+    font-size: 1.375rem;
+    color: var(--text-color);
+    margin: 1rem 1rem 0 2rem;
+}
+
+.right-content{
+    margin: .14rem .89rem;
+    display: flex;
+}
+
+.button-detail{
+    align-self: flex-end;
+    margin: 0 2rem .7rem 0;
+}
+
+.detail-pemandu{
+    font-size: 1.15rem;
+    font-family: var(--brand-font);
+    padding: .4rem 1.2rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.btn-detail, .button-kembali{
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+}
+
+
+/* =========================== Halaman Detail Pemandu ================================= */
+.detail-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #76E1BC;
+    border-radius: 3.125rem;
+    padding: 1.8rem 3rem;
+    margin: 2rem 0;
+}
+
+.mb-1 label{
+    font-family: var(--text-font);
+    font-size: var(--label-size);
+    color: var(--text-label-color);
+    font-weight: var(--text-weight);
+}
+
+.biodata-pemandu {
+    float: left;
+    width: 75%;
+}
+
+.foto-pemandu {
+    margin-top: 1.9rem;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.form-control{
+    border: 1px solid black;
+}
+
+.detail-input{
+    font-family: var(--text-font);
+}
+
+.button-kembali{
+    margin-top: auto;
+    border-radius: 10px;
+    border: none;
+}
+
+.button-kembali a{
+    font-family: var(--brand-font);
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+}
+
+a.btn-kembali svg {
+    margin-right: 0.3rem;
+}
+
+
+/* ====================== Tempat Wisata ========================== */
+.blurb h1{
+    font-family: var(--brand-font);
+    font-size: var(--title-size);
+}
+
+.blurb p{
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+    line-height: 1.7;
+}
+
+
+/* ============================= Hotel ============================== */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover{
+    opacity: .85;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(255, 255, 255, 0.9);
+}
+
+.swiper-button-next::after{
+    border-width: 16px 0 16px 23px;
+    transform: translate(-50%, -50%);
+}
+
+
+.swiper-button-prev::after{
+    transform: translate(-50%, -50%) rotate(180deg);
+    border-width: 16px 0 16px 23px;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-button-prev {
+    left: 15px;
+}
+
+.swiper-button-next {
+    right: 30px;
+}
+
+.custom-swiper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+} 
+
+/* ===================== Halaman Hubungi ==================== */
+.hubungi{
+    padding: 30px;
+    text-align: center;
+    font-family: var(--title-font);
+    font-weight: var(--title-font);
+    font-size: 28px;
+    padding-bottom: .4rem;
+    color: var(--text-color);
+}
+
+.hubungikami-text{
+    font-family: var(--text-font);
+}
+
+/* ========================== Pendaftaran Pemandu ============================== */
+.image_upload>input {
+    display: none;
+}
+
+.text_area_pendaftaran, .label_pendaftaran, .input_pendaftaran, .gender-option{
+    margin: 3px;
+    font-family: var(--text-font);
+}
+
+.margin-input{
+    margin-left: .15rem;
+}
+
+.text_area_pendaftaran{
+    padding-left: .3rem;
+}
+
+.input_pendaftaran::placeholder, .text_area_pendaftaran::placeholder{
+    font-family: var(--text-font);
+}
+
+.margin-photo{
+    margin-left: .5rem;
+}
+
+.btn-kirim{
+    background-color: var(--button-color);
+    border: none;
+    color: var(--text-color);
+    padding: .3em 1.3em;
+    border-radius: 10px;
+    font-family: var(--brand-font);
+    font-weight: var(--title-font);
+    color: black;
+}
+
+.btn-kirim:hover{
+    opacity: .7;
+}
+
+.tambahkan-gambar {
+    display: inline-block;
+    background-color: var(--button-login-color);
+    color: white;
+    padding: .3em .6em;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .tambahkan-gambar:hover {
+    background-color: #3e8e41;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-item:nth-child(2) {
+    margin-top: 10px;
+}
+
+.tambahkan-gambar {
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+
+#selectedFileName {
+    font-family: var(--text-font);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0 .5rem;
+    font-size: var(--text-size);
+}
+
+
+/* ==================== Sejarah =================== */
+#carousel {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.margin-sejarah{
+    margin-top: 3.5rem;
+}
+
+.image-sejarah{
+    height: 500px;
+    width: 100%;
+}
+
+.text-sejarah p{
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    color: var(--text-color);
+}
+
+/* ================== Login & Register ================== */
+.login-page, .registrasi-page{
+    display: flex;
+}
+
+.card-img{
+    height: 770px;
+}
+
+.login, .registrasi {
+    align-self: center;
+    text-align: center;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    height: 430px;
+    width: 350px;
+}
+
+.content-card{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+.card-title {
+    text-align: center;
+    font-family: var(--brand-font);
+    font-size: 2.8125rem;
+}
+
+.form-{
+    margin: 1.5rem 0 1.3rem 0;
+}
+
+.my-input{
+    font-family: var(--text-font);
+}
+
+.my-input::placeholder{
+    color: #C7C7C7;
+}
+
+.card-form-group:nth-child(1){
+    margin-top: 1.5rem;
+}
+
+.card-form-group{
+    margin: .7rem 0;
+}
+
+.card-form-group input[type="text"],
+.card-form-group input[type="password"] {
+    width: 75%;
+    padding: .5rem .4rem;
+    border: 2px solid #DDDDDD;
+    border-radius: 6px;
+    font-size: 16px;
+    align-items: center;
+    cursor:pointer;
+}
+
+
+.card-button button {
+    margin-top: 1.4rem;
+    padding: .5rem .3rem;
+    width: 75%;
+    background: #29AA26;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-family: var(--text-font);
+    border: none;
+    cursor: pointer;
+}
+
+.card-button button:hover{
+    opacity: .7;
+}
+
+.register{
+    background: #E8F3F2;
+    padding: .7rem 0;
+    font-family: var(--text-font);
+    color: #999999;
+    font-size: var(--text-size);
+    margin-top: auto;
+}
+
+.text-register{
+    margin: auto;
+}
+
+.text-register a {
+    color: #29AA26;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.text-register a:hover {
+    color: #29AA26;
+    opacity: .7;
+}
+
+/* =================== Peta Banda Aceh ======================== */
+.peta-bandaaceh {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 1055px;
+}
+
+.title-petabandaaceh{
+    text-align: center;
+}
+
+.title-petabandaaceh h1{
+    font-family: var(--title-font);
+    font-weight: var(--title-weight);
+    font-size: var(--title-size);
+    color: var(--text-color);
+}
+
+.map a {
+    margin-top: .3rem;
+    font-family: var(--text-font);
+    display: block;
+    text-align: center;
+    color: var(--brand-color);
+}
+
+.map a:hover{
+    color: var(--brand-color);
+    opacity: .7;
+}

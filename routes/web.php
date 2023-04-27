@@ -1,6 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PetaController;
+use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\DashboardOrdersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,37 +17,68 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes(['register' => false]);
-
-Route::group(['middleware' => ['is_admin','auth'], 'prefix' => 'admin', 'as' => 'admin.'], function() {
-    Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-
-    // pesanan
-    Route::resource('pesanan', \App\Http\Controllers\Admin\PemesananController::class)->only(['index', 'destroy']);
-    // banda sites
-    Route::resource('banda_sites', \App\Http\Controllers\Admin\BandaSiteController::class)->except('show');
-    Route::resource('banda_sites.galleries', \App\Http\Controllers\Admin\GalleryController::class)->except(['create', 'index','show']);
-    // categories
-    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class)->except('show');
-    // blogs
-    Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class)->except('show');
-    // profile
-    Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-    Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
-    Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
-// banda sites
-Route::get('banda-sites',[\App\Http\Controllers\BandaSiteController::class, 'index'])->name('banda_site.index');
-Route::get('banda-sites/{banda_site:slug}',[\App\Http\Controllers\BandaSiteController::class, 'show'])->name('banda_site.show');
-// blogs
-Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'index'])->name('blog.index');
-Route::get('blogs/{blog:slug}', [\App\Http\Controllers\BlogController::class, 'show'])->name('blog.show');
-Route::get('blogs/category/{category:slug}', [\App\Http\Controllers\BlogController::class, 'category'])->name('blog.category');
-// contact
-Route::get('contact', function() {
-    return view('contact');
-})->name('contact');
-// pemesanan
-Route::post('pemesanan', [App\Http\Controllers\PemesananController::class, 'store'])->name('pemesanan.store');
+Route::get('peta', [PetaController::class, 'index']);
+
+Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
+Route::post('peta/pemanduwisata', [PetaController::class, 'store']);
+
+Route::get('peta/wisata/wisatamuseum', [PetaController::class, 'museum']);
+
+Route::get('peta/wisata/wisatasejarahbudaya', [PetaController::class, 'sejarahBudaya']);
+
+Route::get('peta/wisata/wisatareligi', [PetaController::class, 'religi']);
+
+Route::get('peta/wisata/wisatakuliner', [PetaController::class, 'kuliner']);
+
+Route::get('peta/wisata/wisataalam', [PetaController::class, 'alam']);
+
+Route::get('peta/galeri/hotel', [PetaController::class, 'hotel']);
+
+Route::get('peta/hubungikami', [PetaController::class, 'hub']);
+
+Route::get('peta/pemanduwisata/pendaftaran', [PetaController::class, 'pendaftaran']);
+
+Route::get('peta/pemanduwisata/{nama}', [PetaController::class, 'detail']);
+
+Route::get('peta/sejarah', [PetaController::class, 'sejarah']);
+
+Route::get('peta/login', [PetaController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [PetaController::class, 'authenticate']);
+Route::post('/logout', [PetaController::class, 'logout']);
+
+Route::get('peta/register', [PetaController::class, 'register'])->middleware('guest');
+Route::POST('peta/register', [PetaController::class, 'storeReg']);
+
+
+Route::get('peta/galeri/petabandaaceh', [PetaController::class, 'petabandaaceh']);
+
+Route::get('/dashboard', function() {
+    $registrations = DB::table('registrations')
+    ->select('nama','status')
+    ->get();
+
+    $view_data = [
+        'registrations' => $registrations
+    ];
+    return view('user.dashboard', $view_data);
+})->middleware('auth');
+
+Route::resource('/dashboard/orders', DashboardOrdersController::class)->middleware('auth');
+
+Route::resource('/dashboard/cvpemandu', AdminDashboardController::class)->middleware('admin');
+
+Route::delete('peta/pemanduwisata/{nama}', function($nama) {
+    DB::table('registrations')->where('nama', $nama)->delete();
+    return redirect('/dashboard')->with('success', 'Registration deleted successfully');
+})->middleware('admin');
+
+Route::put('peta/pemanduwisata/{nama}/terima', function($nama) {
+    DB::table('registrations')
+        ->where('nama', $nama)
+        ->update(['status' => 'Diterima']);
+    return redirect('peta/pemanduwisata')->with('success', 'Registration status updated successfully');
+})->middleware('admin');
