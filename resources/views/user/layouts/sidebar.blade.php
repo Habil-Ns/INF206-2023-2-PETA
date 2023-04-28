@@ -7,12 +7,14 @@
                     Dashboard
                 </a>
             </li>
+            @if(auth()->check() && auth()->user()->registration && auth()->user()->registration->status === 'Diterima')
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/orders') ? 'active' : ''}}" href="/dashboard/orders">
                     <span data-feather="file-text" class="align-text-bottom"></span>
                     My Orders
                 </a>
             </li>
+            @endif
         </ul>
         @can('admin')
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

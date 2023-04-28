@@ -30,7 +30,11 @@ PETA-Pemandu Wisata | Pemandu Wisata
                         <input type="tel" name="kontak" class="form-control input_pendaftaran" placeholder="Nomor HP">
                     </div>
                     <div class="col-sm-10">
-                        <input type="email" name="email" class="form-control input_pendaftaran" placeholder="Email">
+                        @if(auth()->check())
+                            <input type="email" name="email" class="form-control input_pendaftaran" placeholder="Email" value="{{ Auth::user()->email }}">
+                        @else
+                            <input type="email" name="email" class="form-control input_pendaftaran" placeholder="Email">
+                        @endif
                     </div>
                     <div class="col-sm-10">
                         <div class="form-group">
