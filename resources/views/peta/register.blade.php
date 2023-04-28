@@ -20,12 +20,8 @@
         <div class="registrasi">
             <div class="content-card">
                 <h1 class="card-title">Buat Akun</h1>
-<<<<<<< HEAD
-                <form class="card-form" action="/login" method="POST">
-=======
                 <form class="card-form" action="/peta/register" method="POST">
                     @csrf
->>>>>>> 2108107010089-HabilNs
                     <div class="card-form-group">
                         <label for="username"></label>
                         <input class="my-input" type="text" id="username" name="username" placeholder="Username">

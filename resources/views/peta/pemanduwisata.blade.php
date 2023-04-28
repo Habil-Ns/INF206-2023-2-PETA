@@ -9,18 +9,6 @@
         <div class="title">
             <h1>Daftar Pemandu Wisata</h1>
         </div>
-<<<<<<< HEAD
-        <div class="daftar-pemandu mt-4">
-            <div class="left-content">
-                <p>Nama: Unknown</p>
-                <p>Penilaian: ******</p>
-            </div>
-            <div class="right-content">
-                <div class="button-detail">
-                    <button class="btn-detail">
-                        <a href="{{url ("peta/user/detailpemanduwisata")}}" class="detail-pemandu">Detail</a>
-                    </button>
-=======
         @foreach ($registrations as $registration)
             @if ($registration->status != 'Pending' )
                 <div class="daftar-pemandu mt-4">
@@ -42,7 +30,6 @@
                             @endif
                         </div>
                     </div>
->>>>>>> 2108107010089-HabilNs
                 </div>
             @endif
         @endforeach

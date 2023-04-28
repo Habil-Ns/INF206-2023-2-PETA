@@ -21,19 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('peta/login, [Controller::class, 'login']);
-
-Route::get('peta/login', [PetaController::class, 'login']);
-
-Route::get('peta/register', [PetaController::class, 'register']);
-
-Route::get('peta/galeri/petabandaaceh', [PetaController::class, 'petabandaaceh']);
-
-Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
-
-Route::get('peta/pemanduwisata/pendaftaran', [PetaController::class, 'pendaftaran']);
-
-Route::get('peta/sejarah', [PetaController::class, 'sejarah']);
 Route::get('peta', [PetaController::class, 'index']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
@@ -66,11 +53,12 @@ Route::post('/logout', [PetaController::class, 'logout']);
 Route::get('peta/register', [PetaController::class, 'register'])->middleware('guest');
 Route::POST('peta/register', [PetaController::class, 'storeReg']);
 
+
 Route::get('peta/galeri/petabandaaceh', [PetaController::class, 'petabandaaceh']);
 
 Route::get('/dashboard', function () {
     $registrations = DB::table('registrations')
-        ->select('nama')
+        ->select('nama', 'status')
         ->get();
 
     $view_data = [

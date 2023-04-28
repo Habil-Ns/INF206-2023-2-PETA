@@ -81,7 +81,10 @@ class PetaController extends Controller
 
     public function pendaftaran()
     {
-        return view('peta.pendaftaran_pemandu');
+        if (auth()->check() && auth()->user()) {
+            return view('peta.pendaftaran_pemandu');
+        } else
+            abort(403);
     }
 
     public function sejarah()
@@ -106,6 +109,7 @@ class PetaController extends Controller
 
     }
 
+
     /**
      * Store a newly created resource in storage.
      */
@@ -129,7 +133,10 @@ class PetaController extends Controller
         $kelebihan = $request->input('kelebihan');
         $kekurangan = $request->input('kekurangan');
 
+        $user_id = auth()->user()->id;
+
         DB::table('registrations')->insert([
+            'user_id' => $user_id,
             'nama' => $nama,
             'umur' => $umur,
             'gender' => $gender,
@@ -207,6 +214,7 @@ class PetaController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
+
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
