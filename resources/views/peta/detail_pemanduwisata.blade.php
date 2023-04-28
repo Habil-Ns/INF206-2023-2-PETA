@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-@if(auth()->user()->can('admin') && $registration->status === 'Pending')
+@if(auth()->check() && auth()->user()->can('admin') && $registration->status === 'Pending')
     <div class="container" id="pemandu_wisata">
         <div class="title">
             <h1>Pemandu Wisata</h1>
