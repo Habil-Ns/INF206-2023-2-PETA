@@ -35,11 +35,8 @@
                 </div>
             </div>
         </div>
-        <button class="btn-pesan">
+        <button class="btn-pesan_landing">
             <a href="{{url ("peta/pemanduwisata")}}" class="pesan-pemandu">Pesan Pemandu</a>
         </button>
     </header>
-    <script src="{{ asset('swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 @endsection
