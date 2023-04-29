@@ -25,9 +25,9 @@ class PetaController extends Controller
     public function pemanduwisata()
     {
         $registrations = DB::table('registrations')
-        ->select('nama', 'gambar', 'status')
-        ->where('status', '<>', 'Pending')
-        ->get();
+            ->select('nama', 'gambar', 'status')
+            ->where('status', '<>', 'Pending')
+            ->get();
 
         $view_data = [
             'registrations' => $registrations
@@ -83,8 +83,7 @@ class PetaController extends Controller
     {
         if (auth()->check() && auth()->user()) {
             return view('peta.pendaftaran_pemandu');
-        }
-        else
+        } else
             abort(403);
     }
 
@@ -109,7 +108,8 @@ class PetaController extends Controller
         return redirect('peta/login');
 
     }
-    
+
+
     /**
      * Store a newly created resource in storage.
      */
@@ -215,7 +215,8 @@ class PetaController extends Controller
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)) {
+
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
             return redirect()->intended('/dashboard');
@@ -231,5 +232,4 @@ class PetaController extends Controller
         request()->session()->regenerateToken();
         return redirect('/peta');
     }
-    
 }

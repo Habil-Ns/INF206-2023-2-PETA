@@ -16,9 +16,9 @@ class AdminDashboardController extends Controller
     {
         $this->authorize('admin');
         $registrations = DB::table('registrations')
-        ->select('nama', 'gambar', 'status', 'cv')
-        ->get();
-        
+            ->select('nama', 'gambar', 'status', 'cv')
+            ->get();
+
         return view('user.admin.cvpemandu.index', compact('registrations'));
     }
 

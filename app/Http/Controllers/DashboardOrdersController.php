@@ -68,5 +68,5 @@ class DashboardOrdersController extends Controller
             'alert-type' => 'danger'
         ]);
     }
-    
+
 }

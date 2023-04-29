@@ -56,10 +56,10 @@ Route::POST('peta/register', [PetaController::class, 'storeReg']);
 
 Route::get('peta/galeri/petabandaaceh', [PetaController::class, 'petabandaaceh']);
 
-Route::get('/dashboard', function() {
+Route::get('/dashboard', function () {
     $registrations = DB::table('registrations')
-    ->select('nama','status')
-    ->get();
+        ->select('nama', 'status')
+        ->get();
 
     $view_data = [
         'registrations' => $registrations
@@ -71,12 +71,12 @@ Route::resource('/dashboard/orders', DashboardOrdersController::class)->middlewa
 
 Route::resource('/dashboard/cvpemandu', AdminDashboardController::class)->middleware('admin');
 
-Route::delete('peta/pemanduwisata/{nama}', function($nama) {
+Route::delete('peta/pemanduwisata/{nama}', function ($nama) {
     DB::table('registrations')->where('nama', $nama)->delete();
     return redirect('/dashboard')->with('success', 'Registration deleted successfully');
 })->middleware('admin');
 
-Route::put('peta/pemanduwisata/{nama}/terima', function($nama) {
+Route::put('peta/pemanduwisata/{nama}/terima', function ($nama) {
     DB::table('registrations')
         ->where('nama', $nama)
         ->update(['status' => 'Diterima']);
