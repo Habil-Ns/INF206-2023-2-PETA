@@ -143,14 +143,14 @@ span{
     align-self: center;
 }
 
-.btn-pesan, .btn-detail{
+.btn-pesan_landing{
     padding: .3em 1.3em;
     border-radius: 10px;
     background-color: #1BB580;
     border: none;
 }
 
-.btn-pesan a{
+.btn-pesan_landing a{
     text-align: center;
     color: var(--text-color);
     text-decoration: none;
@@ -158,18 +158,19 @@ span{
     font-weight: var(--title-font);
 }
 
-.btn-pesan a:hover, .btn-detail a:hover, .nav_item a:hover, .btn-kembali a:hover{
+.btn-pesan_landing a:hover, .btn-detail a:hover, .nav_item a:hover, .btn-kembali a:hover, .btn-pesan a:hover{
     color: var(--text-color);
     text-decoration: none;
 }
 
-.btn-pesan:hover, .btn-detail:hover, .button-kembali:hover, .btn-kirim:hover, .btn-terima:hover, .btn-tolak:hover{
+.btn-pesan_landing:hover, .btn-detail:hover, .button-kembali:hover, .btn-kirim:hover, .btn-terima:hover, .btn-tolak:hover, .btn-pesan:hover{
     opacity: .7;
 }
 
 .content p{
     color: var(--text-second-color);
 }
+
 
 /*=======================  Halaman Pemandu Wisata ===========================*/
 .title h1{
@@ -206,12 +207,24 @@ span{
     margin: 0 2rem .7rem 0;
 }
 
-.detail-pemandu{
+.button-pesan{
+    align-self: flex-end;
+    margin: 0 1rem .7rem 0;
+}
+
+.detail-pemandu, .text-pesan{
     font-size: 1.15rem;
     font-family: var(--brand-font);
-    padding: .4rem 1.2rem;
+    padding: .4rem .6rem;
     text-decoration: none;
     color: var(--text-color);
+}
+
+.btn-detail, .btn-pesan{
+    padding: .3em .5em;
+    border-radius: 10px;
+    background-color: #1BB580;
+    border: none;
 }
 
 .btn-detail, .button-kembali, .btn-terima{
@@ -219,7 +232,58 @@ span{
     border-color: var(--button-color);
 }
 
+.biodata_wisatawan-title{
+    font-size: var(--brand-size);
+    font-family: var(--brand-font);
+    margin-bottom: .7em;
+    color: var(--text-color);
+}
 
+.biodata_wisatawan{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.biodata_wisatawan-content{
+    position: relative;
+    background-color: white;
+    padding: 1.5rem 1.8rem 3.5rem;
+    border-radius: .5rem;
+}
+
+.biodata_wisatawan-margin{
+    row-gap: 1rem;
+}
+
+.data-wisatawan{
+    display: flex;
+}
+
+.biodata_wisatawan-close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.biodata-active{
+    opacity: 1;
+    visibility: visible;
+}
 /* =========================== Halaman Detail Pemandu ================================= */
 .detail-content {
     display: flex;

@@ -43,14 +43,14 @@
                                                 @method('PUT')
                                                 <button
                                                     style="border-radius:10px; font-family:'Poppins'; font-weight: 600; color:#000000"
-                                                    type="submit" class="btn btn-primary">Terima</button>
+                                                    type="submit" class="btn btn-terima btn-primary">Terima</button>
                                             </form>
                                             <form action="{{ url('peta/pemanduwisata/' . $registration->nama) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button
                                                     style="border-radius:10px; font-family:'Poppins'; font-weight: 600; color:#000000; margin-left:10px;"
-                                                    type="submit" class="btn btn-danger gap-2"
+                                                    type="submit" class="btn btn-tolak btn-danger gap-2"
                                                     onclick="return confirm('Are you sure you want to reject this registration?')">Tolak</button>
                                             </form>
                                         </div>

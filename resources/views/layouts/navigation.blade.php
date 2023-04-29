@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{ asset('swiper/swiper-bundle.css') }}">
     <!-- Css -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!--================= UNICONS ======================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
 
@@ -23,7 +25,7 @@
             <div class="nav_menu" id="nav-menu">
                 <ul class="nav_list">
                     <li class="nav_item">
-                        <a href="{{ url('peta') }}" class="nav_link active-link">Beranda</a>
+                        <a href="{{ url('peta') }}" class="nav_link active">Beranda</a>
                     </li>
                     <li class="nav_item">
                         <a href="{{ url('peta/sejarah') }}" class="nav_link">Sejarah</a>
@@ -94,6 +96,8 @@
     <script src="{{ asset('swiper/swiper-bundle.min.js') }}"></script>
     <!-- JS -->
     <script src="{{ asset('js/script.js') }}"></script>
+    <!-- JS 2 -->
+    <script src="{{ asset('js/biodata_wisatawan.js') }}"></script>
     <!-- Bootstrap JS -->
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- JQuery -->
