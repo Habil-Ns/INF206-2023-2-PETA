@@ -17,10 +17,7 @@ use App\Http\Controllers\DashboardOrdersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [PetaController::class, 'index']);
 Route::get('peta', [PetaController::class, 'index']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
