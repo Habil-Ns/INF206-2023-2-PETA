@@ -84,7 +84,7 @@ class PetaController extends Controller
         if (auth()->check() && auth()->user()) {
             return view('peta.pendaftaran_pemandu');
         } else
-            abort(403);
+            return view('user.registration_refuse');
     }
 
     public function sejarah()
