@@ -232,4 +232,29 @@ class PetaController extends Controller
         request()->session()->regenerateToken();
         return redirect('/peta');
     }
+
+    public function daftarsaran()
+    {
+        $this->authorize('admin');
+        $sarans = DB::table('sarans')
+            ->select('nama', 'email', 'komentar')
+            ->get();
+        return view('user.admin.saran.daftarsaran', compact('sarans'));
+    }
+
+    public function storesaran(Request $request)
+    {
+        $nama = $request->input('nama');
+        $email = $request->input('email');
+        $komentar = $request->input('komentar');
+
+        DB::table('sarans')->insert([
+            'nama' => $nama,
+            'email' => $email,
+            'komentar' => $komentar,
+        ]);
+
+        // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
+        return view('user.saran_accept');
+    }
 }

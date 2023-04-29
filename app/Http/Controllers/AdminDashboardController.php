@@ -43,7 +43,7 @@ class AdminDashboardController extends Controller
      */
     public function show(string $id)
     {
-        return view('user.admin.cvpemandu.show');
+        //
     }
 
     /**
