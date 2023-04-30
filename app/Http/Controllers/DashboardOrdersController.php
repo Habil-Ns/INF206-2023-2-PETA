@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DashboardOrdersController extends Controller
 {
@@ -13,7 +14,11 @@ class DashboardOrdersController extends Controller
      */
     public function index()
     {
-        return view('user.orders.index');
+        $orders = DB::table('orders')
+            ->select('nama', 'umur', 'nohp', 'gender', 'status')
+            ->get();   
+
+        return view('user.orders.index', compact('orders'));
     }
 
     /**

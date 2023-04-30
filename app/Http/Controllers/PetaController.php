@@ -257,4 +257,23 @@ class PetaController extends Controller
         // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
         return view('user.saran_accept');
     }
+
+    public function storeorder(Request $request)
+    {
+        $nama = $request->input('nama');
+        $umur = $request->input('umur');
+        $nohp = $request->input('nohp');
+        $gender = $request->input('gender');
+
+        DB::table('orders')->insert([
+            'nama' => $nama,
+            'umur' => $umur,
+            'nohp' => $nohp,
+            'gender' => $gender,
+            'status' => "Belum diproses",
+        ]);
+        
+        // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
+        return view('user.order_done');
+    }
 }

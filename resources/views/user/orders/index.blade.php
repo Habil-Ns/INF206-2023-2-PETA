@@ -14,17 +14,35 @@
               <th scope="col">Umur</th>
               <th scope="col">No Hp</th>
               <th scope="col">Jenis Kelamin</th>
+              <th scope="col">Status</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($orders as $order)
             <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+              <td>{{ $loop->iteration }}</td>
+              <td>{{ $order->nama}}</td>
+              <td>{{ $order->umur}}</td>
+              <td>{{ $order->nohp}}</td>
+              <td>{{ $order->gender}}</td>
+              <td>{{ $order->status }}</td>
+              <td class="d-flex gap-2">
+                <form method="POST" action="{{ url("orders/$order->nama") }}">
+                  @csrf
+                  @method('PUT')
+                    <button type="submit" class="btn btn-success">Terima</button>
+                </form>
+                <form action="{{ url('orders/' . $order->nama) }}" method="POST">
+                  @csrf
+                  @method('DELETE')
+                  <button
+                      type="submit" class="btn btn-danger"
+                      onclick="return confirm('Are you sure you want to reject this orders?')">Tolak</button>
+              </form>
+            </td>
             </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

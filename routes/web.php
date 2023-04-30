@@ -22,6 +22,7 @@ Route::get('peta', [PetaController::class, 'index']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
 Route::post('peta/pemanduwisata', [PetaController::class, 'store']);
+Route::post('peta/pemesanan', [PetaController::class, 'storeorder']);
 
 Route::get('peta/wisata/wisatamuseum', [PetaController::class, 'museum']);
 
@@ -81,3 +82,15 @@ Route::put('peta/pemanduwisata/{nama}/terima', function ($nama) {
         ->update(['status' => 'Diterima']);
     return redirect('peta/pemanduwisata')->with('success', 'Registration status updated successfully');
 })->middleware('admin');
+
+Route::put('orders/{nama}', function ($nama) {
+    DB::table('orders')
+        ->where('nama', $nama)
+        ->update(['status' => 'Diproses']);
+    return redirect('/dashboard/orders')->with('success', 'Orders status updated successfully');
+})->middleware('auth');
+
+Route::delete('orders/{nama}', function ($nama) {
+    DB::table('orders')->where('nama', $nama)->delete();
+    return redirect('/dashboard/orders')->with('success', 'Orders deleted successfully');
+})->middleware('auth');
