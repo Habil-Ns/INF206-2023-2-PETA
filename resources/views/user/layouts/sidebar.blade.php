@@ -27,6 +27,12 @@
                     CV Pemandu
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/daftarsaran*') ? 'active' : ''}}" href="/dashboard/daftarsaran">
+                    <span data-feather="file-text" class="align-text-bottom"></span>
+                    Daftar Saran
+                </a>
+            </li>
         </ul>
         @endcan
     </div>

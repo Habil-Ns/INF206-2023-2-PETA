@@ -84,7 +84,7 @@ class PetaController extends Controller
         if (auth()->check() && auth()->user()) {
             return view('peta.pendaftaran_pemandu');
         } else
-            abort(403);
+            return view('user.registration_refuse');
     }
 
     public function sejarah()
@@ -99,7 +99,7 @@ class PetaController extends Controller
         $validatedData = $request->validate([
             'username' => ['required', 'min:3', 'max:255', 'unique:users'],
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:3|max:255'
+            'password' => 'required|min:5|max:255'
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
@@ -231,5 +231,49 @@ class PetaController extends Controller
         request()->session()->invalidate();
         request()->session()->regenerateToken();
         return redirect('/peta');
+    }
+
+    public function daftarsaran()
+    {
+        $this->authorize('admin');
+        $sarans = DB::table('sarans')
+            ->select('nama', 'email', 'komentar')
+            ->get();
+        return view('user.admin.saran.daftarsaran', compact('sarans'));
+    }
+
+    public function storesaran(Request $request)
+    {
+        $nama = $request->input('nama');
+        $email = $request->input('email');
+        $komentar = $request->input('komentar');
+
+        DB::table('sarans')->insert([
+            'nama' => $nama,
+            'email' => $email,
+            'komentar' => $komentar,
+        ]);
+
+        // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
+        return view('user.saran_accept');
+    }
+
+    public function storeorder(Request $request)
+    {
+        $nama = $request->input('nama');
+        $umur = $request->input('umur');
+        $nohp = $request->input('nohp');
+        $gender = $request->input('gender');
+
+        DB::table('orders')->insert([
+            'nama' => $nama,
+            'umur' => $umur,
+            'nohp' => $nohp,
+            'gender' => $gender,
+            'status' => "Belum diproses",
+        ]);
+        
+        // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
+        return view('user.order_done');
     }
 }

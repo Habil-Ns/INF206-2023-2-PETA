@@ -17,14 +17,12 @@ use App\Http\Controllers\DashboardOrdersController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', [PetaController::class, 'index']);
 Route::get('peta', [PetaController::class, 'index']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
 Route::post('peta/pemanduwisata', [PetaController::class, 'store']);
+Route::post('peta/pemesanan', [PetaController::class, 'storeorder']);
 
 Route::get('peta/wisata/wisatamuseum', [PetaController::class, 'museum']);
 
@@ -39,6 +37,7 @@ Route::get('peta/wisata/wisataalam', [PetaController::class, 'alam']);
 Route::get('peta/galeri/hotel', [PetaController::class, 'hotel']);
 
 Route::get('peta/hubungikami', [PetaController::class, 'hub']);
+Route::post('peta/hubungikami', [PetaController::class, 'storesaran']);
 
 Route::get('peta/pemanduwisata/pendaftaran', [PetaController::class, 'pendaftaran']);
 
@@ -70,6 +69,7 @@ Route::get('/dashboard', function () {
 Route::resource('/dashboard/orders', DashboardOrdersController::class)->middleware('auth');
 
 Route::resource('/dashboard/cvpemandu', AdminDashboardController::class)->middleware('admin');
+Route::get('/dashboard/daftarsaran', [PetaController::class, 'daftarsaran'])->middleware('admin');
 
 Route::delete('peta/pemanduwisata/{nama}', function ($nama) {
     DB::table('registrations')->where('nama', $nama)->delete();
@@ -82,3 +82,15 @@ Route::put('peta/pemanduwisata/{nama}/terima', function ($nama) {
         ->update(['status' => 'Diterima']);
     return redirect('peta/pemanduwisata')->with('success', 'Registration status updated successfully');
 })->middleware('admin');
+
+Route::put('orders/{nama}', function ($nama) {
+    DB::table('orders')
+        ->where('nama', $nama)
+        ->update(['status' => 'Diproses']);
+    return redirect('/dashboard/orders')->with('success', 'Orders status updated successfully');
+})->middleware('auth');
+
+Route::delete('orders/{nama}', function ($nama) {
+    DB::table('orders')->where('nama', $nama)->delete();
+    return redirect('/dashboard/orders')->with('success', 'Orders deleted successfully');
+})->middleware('auth');

@@ -39,9 +39,11 @@ PETA-Pemandu Wisata | Pemandu Wisata
         </div>
     </div>
     <div class="biodata_wisatawan">
+        <form action="{{url('peta/pemesanan')}}" method="POST" enctype="multipart/form-data">
+            @csrf
         <div class="biodata_wisatawan-content">
             <h3 class="biodata_wisatawan-title">
-                Biodata<br>Wisatawan
+                Form Pemesanan
             </h3>
             <i class="uil uil-times biodata_wisatawan-close"></i>
             <ul class="biodata_wisatawan-margin grid">
@@ -52,7 +54,7 @@ PETA-Pemandu Wisata | Pemandu Wisata
                     <input type="number" name="umur" class="form-control input_pendaftaran" placeholder="Umur">
                 </div>
                 <div class="data-wisatawan col-sm-10">
-                    <input type="tel" name="kontak" class="form-control input_pendaftaran" placeholder="Nomor HP">
+                    <input type="tel" name="nohp" class="form-control input_pendaftaran" placeholder="Nomor HP">
                 </div>
                 <div class="data-wisatawan col-sm-10 margin-input">
                     <select class="form-select gender-option" name="gender" aria-label="Default select example">
@@ -61,8 +63,13 @@ PETA-Pemandu Wisata | Pemandu Wisata
                         <option class="gender-option" value="Wanita">Wanita</option>
                     </select>
                 </div>
+                <div class="button d-flex justify-content-end mt-3">
+                    <button type="submit" class="btn-kirim input_pendaftaran">Pesan
+                    </button>
+                </div>
             </ul>
         </div>
+    </form>
     </div>
     @endif
     @endforeach
