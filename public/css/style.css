@@ -154,8 +154,7 @@ span{
     text-align: center;
     color: var(--text-color);
     text-decoration: none;
-    font-family: var(--title-font);
-    font-weight: var(--title-font);
+    font-family: var(--brand-font);
 }
 
 .btn-pesan_landing a:hover, .btn-detail a:hover, .nav_item a:hover, .btn-kembali a:hover, .btn-pesan a:hover{
@@ -774,4 +773,34 @@ a.btn-kembali svg {
     font-weight: bold;
     box-sizing: border-box;
     display: inline-block;
+}
+
+/* ====================== Footer ==================== */
+#footer {
+    background-color: #76E1BC;
+}
+
+#services {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-text{
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-family: var(--brand-font);
+    font-weight: var(--text-weight);
+}
+
+.footer-text:hover{
+    color: var(--footer-text-color);
+    opacity: .6;
+}
+
+.copyright, .footer-text{
+    color: var(--footer-text-color);
+}
+
+.copyright{
+    font-size: .875rem;
 }

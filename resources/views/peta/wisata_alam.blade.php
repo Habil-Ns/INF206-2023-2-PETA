@@ -68,7 +68,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center my-3">
+        <div class="row align-items-center mt-3 mb-4">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/pantai_aluenaga.jpg')}}"  alt="Pantai Alue Naga" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -82,4 +82,6 @@
                 </div>
             </div>
         </div>
+</div>
+@include('layouts.footer')
 @endsection

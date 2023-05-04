@@ -11,63 +11,45 @@
         <link href='https://fonts.googleapis.com/css?family=Source Serif Pro' rel='stylesheet'>
     <title>Document</title>
 </head>
-<style>
-    #footer {
-        background-color: #1BB580;
-    }
-
-    #f1 {
-        display: flex;
-        justify-content: end;
-        margin-top: 2px;
-    }
-</style>
-
 <body>
-
     <!-- Footer -->
-    <footer class="">
-        <section class="" id="footer">
-            <div class="container text-center text-md-start mt-5 ">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h6 class="text-uppercase fw-bold mb-4" style="font-family: 'Patua One'; margin-top: 2px;">
-                            <i class=""></i>PETA-Pemandu Wisata
+    <footer class="footer-peta">
+        <section class="footer_section" id="footer">
+            <div class="container">
+                <div class="footer-content row pt-4">
+                    <div class="col-sm-5">
+                        <h6 class="">
+                            <a href="{{ url('peta') }}" class="footer-text">PETA-Pemandu Wisata</a>
                         </h6>
-                        <p style="font-family: 'Source Serif Pro';">
+                        <p style="color: #515151; font-family: 'Source Serif Pro';">
                             Tujuan kami adalah memfasilitasi para wisatawan dalam mencari pemandu wisata di Banda Aceh
-                            dan membuka kesempatan kerja bagi mereka yang ingin menjadi pemandu wisata
+                            dan membuka kesempatan kerja bagi mereka yang ingin menjadi pemandu wisata.
                         </p>
                     </div>
-                    <div class="col-sm-9" id="f1">
+                    <div class="col-sm-7" id="services">
                         <div class="row">
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
-                                    <a href="" class="text-decoration-none text-black" style="font-family: 'Patua One';">pemandu wisata </a>
+                            <div class="col-md-4 col-lg-4 col-xl-4">
+                                <h6 class="pemandu-footer">
+                                    <a href="{{ url('peta/pemanduwisata') }}" class="footer-text">Pemandu Wisata</a>
                                 </h6>
                             </div>
-                            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
-                                    <a href="" class="text-decoration-none text-black" style="font-family: 'Patua One';">Pendaftaran pemandu </a>
+                            <div class="col-md-4 col-lg-4 col-xl-4">
+                                <h6 class="pendaftaran-footer">
+                                    <a href="{{ url('peta/pemanduwisata/pendaftaran') }}" class="footer-text">Pendaftaran Pemandu</a>
                                 </h6>
                             </div>
-                            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <h6 class="text-uppercase fw-bold mb-4">
-                                    <a href="" class="text-decoration-none text-black" style="font-family: 'Patua One';">Hubungi </a>
+                            <div class="col-md-4 col-lg-4 col-xl-4">
+                                <h6 class="hubungi-footer">
+                                    <a href="{{ url('peta/hubungikami') }}" class="footer-text">Hubungi</a>
                                 </h6>
                             </div>
                         </div>
-
-
-                        
                     </div>
-                    <div class="text-center p-3" style="font-family: 'Source Serif Pro';">
+                    <div class="copyright text-center pb-3" style="font-family: 'Source Serif Pro';">
                         Copyright © 2023 PETA-Pemandu Wisata
                     </div>
                 </div>
         </section>
-
-
     </footer>
     <!-- Footer -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
