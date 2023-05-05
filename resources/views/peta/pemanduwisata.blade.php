@@ -5,7 +5,7 @@ PETA-Pemandu Wisata | Pemandu Wisata
 @endsection
 
 @section('content')
-<div class="container my-5" id="daftar_pemandu">
+<div class="container mt-5" id="daftar_pemandu">
     <div class="title">
         <h1>Daftar Pemandu Wisata</h1>
     </div>

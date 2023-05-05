@@ -289,6 +289,7 @@ class PetaController extends Controller
         return view('peta.pemanduwisata');
     }
     
+    
    
    
 }

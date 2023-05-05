@@ -561,7 +561,7 @@ a.btn-kembali svg {
     background-color: var(--button-color);
     border: none;
     color: var(--text-color);
-    padding: .3em 1.3em;
+    padding: .3em 1.5em;
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);

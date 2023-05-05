@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <div class="container mt-5" id="wisata_kuliner">
+    <div class="container mt-6" id="wisata_kuliner">
         <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/sate_matang_dwan.jpg')}}"  alt="Sate Matang D'Wan" srcset="" class="img-fluid" width="458px" height="329px">
