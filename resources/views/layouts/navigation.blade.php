@@ -60,16 +60,16 @@
                     </li>
                     @auth
                     <li class="nav_item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false" style="padding-top: 20px; padding-bottom: 20px;">
+                        <a class="nav-user dropdown-toggle" href="#" id="navbarDropdown"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Hi, {{ auth()->user()->username }}</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                        <ul class="dropdown-menu dropdown-menu-lg-end p-0 custom-dropdown" aria-labelledby="navbarDropdown" id="dropdown-width" style="transform: translate3d(-12px, 29px, 0px);">
+                            <li><a class="link-dashboard" href="/dashboard" id="nav-dashboard">Dashboard</a></li>
+                            <li><hr class="dropdown-divider" id="dropdown-divider"></li>
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item">Keluar</button>
+                                    <button type="submit" class="dropdown-item" id="nav-keluar">Keluar</button>
                                 </form>
                             </li>
                         </ul>
@@ -80,9 +80,9 @@
                             <img class="img_pengguna" src="{{ asset('images/user.png') }}" alt="User" width=56px
                                 height=56px>
                         </a>
-                        <ul class="submenu submenupengguna">
-                            <li><a href="{{ url('peta/login') }}">Masuk Sebagai Admin</a></li>
-                            <li><a href="{{ url('peta/login') }}">Masuk Sebagai Pemandu Wisata</a></li>
+                        <ul class="submenu submenupengguna" id="submenu-user">
+                            <li><a href="{{ url('peta/login') }}" id="masuk-admin">Masuk Sebagai Admin</a></li>
+                            <li><a href="{{ url('peta/login') }}" id="masuk-pemandu">Masuk Sebagai Pemandu Wisata</a></li>
                         </ul>
                         @endauth
                     </li>
