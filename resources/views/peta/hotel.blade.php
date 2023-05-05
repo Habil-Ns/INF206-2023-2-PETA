@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center mt-3">
+        <div class="row align-items-center mt-3 mb-5">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <div class="swiper-container custom-swiper" style="overflow: hidden;">
                     <div class="swiper-wrapper">
@@ -126,8 +126,5 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    
+@include('layouts.footer')
 @endsection

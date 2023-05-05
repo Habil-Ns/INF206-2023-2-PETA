@@ -276,4 +276,20 @@ class PetaController extends Controller
         // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
         return view('user.order_done');
     }
+    public function rate(Request $request, $store)
+    {
+        $rate = $request->input('rate');
+        
+
+        DB::table($store.'_rate')->insert([
+            'rate' => $rate,
+            
+        ]);
+        
+        return view('peta.pemanduwisata');
+    }
+    
+    
+   
+   
 }

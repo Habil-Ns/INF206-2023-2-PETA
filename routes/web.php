@@ -24,6 +24,7 @@ Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
 Route::post('peta/pemanduwisata', [PetaController::class, 'store']);
 Route::post('peta/pemesanan', [PetaController::class, 'storeorder']);
 
+
 Route::get('peta/wisata/wisatamuseum', [PetaController::class, 'museum']);
 
 Route::get('peta/wisata/wisatasejarahbudaya', [PetaController::class, 'sejarahBudaya']);

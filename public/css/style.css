@@ -41,16 +41,21 @@ span{
 }
 
 /* =========================== NAV ============================== */
+.navigation{
+    display: flex;
+    align-items: center;
+}
+
 .nav_brand{
     font-family: var(--brand-font);
     font-size: var(--brand-size);
     color: #000000;
-    margin-top: .8rem;
 }
 
 .nav_list{
     display: flex;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .nav_item:not(:last-child) {
@@ -63,11 +68,57 @@ span{
 
 .nav_link{
     color: var(--text-color);
-    padding: .2rem .5rem;
+    padding-right: .7rem;
+    margin: auto 0;
     text-decoration: none;
     font-size: var(--nav-size);
     display: inline-block; 
     font-family: var(--text-font);
+}
+
+
+.nav-user{
+    display: block;
+    padding-top: .3rem;
+    color: var(--brand-color);
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+#submenu-user{
+    height: 75px;
+}
+
+#nav-dashboard, #nav-keluar{
+    padding: .2rem .4rem;
+    color: #000000;
+    text-decoration: none;
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+    background-color: transparent;
+}
+
+#nav-dashboard:hover, #nav-keluar:hover{
+    opacity: .4;
+}
+
+#masuk-admin, #masuk-pemandu{
+    font-size: var(--nav-size);
+}
+
+#navbarDropdown:hover{
+    color: var(--brand-color);
+    opacity: .6;
+}
+
+#dropdown-width{
+    min-width: 1rem;
+}
+
+#dropdown-divider{
+    margin: .1rem 0;
 }
 
 .nav_link:hover, .submenu a:hover{
@@ -143,19 +194,22 @@ span{
     align-self: center;
 }
 
-.btn-pesan_landing{
+.btn-pesan_landing, .btn-terima_wisatawan, .btn-tolak_wisatawan{
     padding: .3em 1.3em;
     border-radius: 10px;
     background-color: #1BB580;
     border: none;
 }
 
+.btn-tolak_wisatawan{
+    background-color: var(--button-tolak-color);
+}
+
 .btn-pesan_landing a{
     text-align: center;
     color: var(--text-color);
     text-decoration: none;
-    font-family: var(--title-font);
-    font-weight: var(--title-font);
+    font-family: var(--brand-font);
 }
 
 .btn-pesan_landing a:hover, .btn-detail a:hover, .nav_item a:hover, .btn-kembali a:hover, .btn-pesan a:hover{
@@ -173,12 +227,57 @@ span{
 
 
 /*=======================  Halaman Pemandu Wisata ===========================*/
+
+
+.rate input{
+  display: none;
+}
+.rate  label{
+  float: right;
+  font-size: 50px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+}
+.rate  label:before{
+  content: '★';
+
+}
+.rate  input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+  border-radius: 3%;
+}
+.rate :not(:checked) > label:hover,
+.rate :not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.rate  input:checked > label:hover,
+.rate  input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.rate  .result:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 50%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 30px;
+  font-weight: 500;
+  color: gold;
+  font-family: 'Poppins', sans-serif;
+  display: none;
+}
+
+
 .title h1{
     font-family: var(--title-font);
     font-weight: var(--title-weight);
     font-size: var(--title-size);
     padding-bottom: .4rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #252525;
     color: var(--text-color);
 }
 
@@ -316,7 +415,7 @@ span{
 }
 
 .form-control{
-    border: 1px solid black;
+    border: 1px solid #252525;
 }
 
 .detail-input{
@@ -342,6 +441,10 @@ a.btn-kembali svg {
 
 
 /* ====================== Tempat Wisata ========================== */
+.margin-wisata{
+    margin-top: 2.5rem;
+}
+
 .blurb h1{
     font-family: var(--brand-font);
     font-size: var(--title-size);
@@ -462,11 +565,12 @@ a.btn-kembali svg {
     background-color: var(--button-color);
     border: none;
     color: var(--text-color);
-    padding: .3em 1.3em;
+    padding: .4em 2.7em;
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);
-    color: black;
+    font-size: 1.2rem;
+    color: #252525;
 }
 
 
@@ -644,10 +748,14 @@ a.btn-kembali svg {
 
 /* =================== Peta Banda Aceh ======================== */
 .peta-bandaaceh {
-    border: 1px solid black;
+    border: 1px solid #252525;
     padding: 10px;
     border-radius: 10px;
     max-width: 1055px;
+}
+
+.peta_bandaaceh-margin{
+    margin-top: 3.5rem;
 }
 
 .title-petabandaaceh{
@@ -766,7 +874,7 @@ a.btn-kembali svg {
     border-radius: 50%;
     border: 1px solid #007bff;
     background-color: #E2F4FF;
-    color: black;
+    color: #252525;
     font-family: var(--brand-font);
     font-style: normal;
     text-align: center;
@@ -774,4 +882,34 @@ a.btn-kembali svg {
     font-weight: bold;
     box-sizing: border-box;
     display: inline-block;
+}
+
+/* ====================== Footer ==================== */
+#footer {
+    background-color: #76E1BC;
+}
+
+#services {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-text{
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-family: var(--brand-font);
+    font-weight: var(--text-weight);
+}
+
+.footer-text:hover{
+    color: var(--footer-text-color);
+    opacity: .6;
+}
+
+.copyright, .footer-text{
+    color: var(--footer-text-color);
+}
+
+.copyright{
+    font-size: .875rem;
 }

@@ -31,14 +31,14 @@
                 <form method="POST" action="{{ url("orders/$order->nama") }}">
                   @csrf
                   @method('PUT')
-                    <button type="submit" class="btn btn-success">Terima</button>
+                    <button type="submit" class="btn btn-success btn-terima_wisatawan" style="font-family:'Patua One'; font-weight: 400;">Terima</button>
                 </form>
                 <form action="{{ url('orders/' . $order->nama) }}" method="POST">
                   @csrf
                   @method('DELETE')
                   <button
-                      type="submit" class="btn btn-danger"
-                      onclick="return confirm('Are you sure you want to reject this orders?')">Tolak</button>
+                      type="submit" class="btn btn-danger btn-tolak_wisatawan" 
+                      onclick="return confirm('Apakah kamu yakin ingin menolak pesanan?')" style="font-family:'Patua One'; font-weight: 400;">Tolak</button>
               </form>
             </td>
             </tr>

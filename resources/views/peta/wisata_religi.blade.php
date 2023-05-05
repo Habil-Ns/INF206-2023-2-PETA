@@ -7,7 +7,11 @@
 
 
 @section('content')
-    <div class="container mt-5" id="wisata_religi">
+<<<<<<< HEAD
+    <div class="container margin-wisata" id="wisata_religi">
+=======
+    <div class="container mt-7" id="wisata_religi">
+>>>>>>> 2108107010083-Faiza
         <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/Masjid_Baiturrahman.jpg')}}"  alt="Masjid Raya Baiturrahman" srcset="" class="img-fluid" width="458px" height="329px">
@@ -53,7 +57,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center my-3">
+        <div class="row align-items-center mt-3 mb-4">
             <div class="col-md-6 order-1 mt-3 ">
                 <img src="{{asset ('images/Masjid_keucikleumik.jpg')}}" alt="Masjid Haji Keuchik Leumiek" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -67,4 +71,6 @@
                 </div>
             </div>
         </div>
+        </div>
+@include('layouts.footer')
 @endsection

@@ -5,7 +5,7 @@ PETA-Pemandu Wisata | Pemandu Wisata
 @endsection
 
 @section('content')
-<div class="container my-5" id="daftar_pemandu">
+<div class="container mt-5" id="daftar_pemandu">
     <div class="title">
         <h1>Daftar Pemandu Wisata</h1>
     </div>
@@ -14,7 +14,65 @@ PETA-Pemandu Wisata | Pemandu Wisata
     <div class="daftar-pemandu mt-4">
         <div class="left-content">
             <p>Nama: {{$registration->nama}}</p>
-            <p>Penilaian: ******</p>
+            
+            <div class="rate">
+                <p>Penilaian:</p> 
+                <input type="radio" id="five" name="rate" value="5">
+                <label for="five"></label>
+                <input type="radio" id="four" name="rate" value="4">
+                <label for="four"></label>
+                <input type="radio" id="three" name="rate" value="3">
+                <label for="three"></label>
+                <input type="radio" id="two" name="rate" value="2">
+                <label for="two"></label>
+                <input type="radio" id="one" name="rate" value="1">
+                <label for="one"></label>
+                <input type="button" onclick="submitRating()" value="Submit">
+                <span id="rating-text"></span>
+              </div>
+              
+              <script>
+                function submitRating() {
+                  const rating = document.querySelector('input[name="rate"]:checked');
+                  if (!rating) {
+                    alert('Anda belum memberikan rating!');
+                    return;
+                  }
+                  const rateValue = rating.value;
+                  // Ajukan permintaan POST menggunakan Ajax untuk menyimpan rating ke database.
+                  // Jangan lupa untuk memasukkan token csrf jika diperlukan.
+                  fetch('/store/' + rateValue, {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({ rate: rateValue })
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    // Tampilkan pesan sukses atau error.
+                    const message = data.success ? 'Rating Anda berhasil disimpan.' : 'Terjadi kesalahan saat menyimpan rating Anda.';
+                    alert(message);
+                    // Reset input rating.
+                    rating.checked = false;
+                    // Perbarui teks rating.
+                    const ratingText = document.getElementById('rating-text');
+                    ratingText.innerHTML = `Anda memberikan rating ${rateValue}.`;
+                  })
+                  .catch(error => {
+                    console.error(error);
+                    alert('Terjadi kesalahan saat menyimpan rating Anda.');
+                  });
+                }
+              </script>
+              
+            
+           
+            
+            
+            
+            
         </div>
         <div class="right-content">
             <div class="button-pesan">

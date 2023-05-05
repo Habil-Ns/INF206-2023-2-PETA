@@ -39,4 +39,5 @@
             <a href="{{url ("peta/pemanduwisata")}}" class="pesan-pemandu">Pesan Pemandu</a>
         </button>
     </header>
+    @include('layouts.footer')
 @endsection
