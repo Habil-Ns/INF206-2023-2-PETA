@@ -557,16 +557,18 @@ a.btn-kembali svg {
     margin-left: .5rem;
 }
 
-.btn-kirim{
+.btn-kirim {
     background-color: var(--button-color);
     border: none;
     color: var(--text-color);
-    padding: .3em 1.5em;
+    padding: .4em 2.7em; 
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);
+    font-size: 1.2rem;
     color: black;
-}
+  }
+  
 
 
 .tambahkan-gambar {
