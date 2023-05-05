@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center my-3">
+        <div class="row align-items-center mt-3 mb-4">
             <div class="col-md-6 mt-3 order-1">
                 <img src="{{asset ('images/daus_nasigoreng.png')}}" alt="Daus Nasi Goreng Khas Aceh Peunayong" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -67,4 +67,6 @@
                 </div>
             </div>
         </div>
+        </div>
+@include('layouts.footer')
 @endsection

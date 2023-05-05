@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="row align-items-center my-3">
+        <div class="row align-items-center mt-3 mb-4">
             <div class="col-md-6 order-1 mt-3 ">
                 <img src="{{asset ('images/Masjid_keucikleumik.jpg')}}" alt="Masjid Haji Keuchik Leumiek" srcset="" class="img-fluid" width="458px" height="329px">
             </div>
@@ -67,4 +67,6 @@
                 </div>
             </div>
         </div>
+        </div>
+@include('layouts.footer')
 @endsection

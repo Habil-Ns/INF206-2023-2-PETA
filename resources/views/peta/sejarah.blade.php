@@ -41,7 +41,7 @@ PETA-Pemandu Wisata | Sejarah
     <div class="title">
         <h1>Sejarah Aceh</h1>
     </div>
-    <div class="text-sejarah">
+    <div class="text-sejarah mb-5">
         <p>
         Aceh merupakan daerah yang terletak di bagian paling Barat gugusan kepulauan Nusantara yang memiliki posisi strategis sebagai gerbang perdagangan dan pertukaran budaya antara Timur dan Barat selama berabad-abad. Para pedagang dari Cina, Eropa, India, dan Arab sering singgah di Aceh, sehingga membuat Aceh menjadi daerah pertama yang memperkenalkan budaya dan agama di Indonesia. Meskipun agama Hindu dan Buddha diperkenalkan oleh pedagang India pada abad ke-7, peran Aceh semakin menonjol dengan masuknya agama Islam yang diperkenalkan oleh pedagang Gujarat dari Arab pada akhir abad ke-9.
         </p>
@@ -53,4 +53,5 @@ PETA-Pemandu Wisata | Sejarah
         </p>
     </div>
 </div>
+@include('layouts.footer')
 @endsection
