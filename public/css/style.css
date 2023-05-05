@@ -277,7 +277,7 @@ span{
     font-weight: var(--title-weight);
     font-size: var(--title-size);
     padding-bottom: .4rem;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #252525;
     color: var(--text-color);
 }
 
@@ -415,7 +415,7 @@ span{
 }
 
 .form-control{
-    border: 1px solid black;
+    border: 1px solid #252525;
 }
 
 .detail-input{
@@ -566,7 +566,7 @@ a.btn-kembali svg {
     font-family: var(--brand-font);
     font-weight: var(--title-font);
     font-size: 1.2rem;
-    color: black;
+    color: #252525;
   }
   
 
@@ -745,7 +745,7 @@ a.btn-kembali svg {
 
 /* =================== Peta Banda Aceh ======================== */
 .peta-bandaaceh {
-    border: 1px solid black;
+    border: 1px solid #252525;
     padding: 10px;
     border-radius: 10px;
     max-width: 1055px;
@@ -867,7 +867,7 @@ a.btn-kembali svg {
     border-radius: 50%;
     border: 1px solid #007bff;
     background-color: #E2F4FF;
-    color: black;
+    color: #252525;
     font-family: var(--brand-font);
     font-style: normal;
     text-align: center;
