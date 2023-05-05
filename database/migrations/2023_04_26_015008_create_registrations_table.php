@@ -25,7 +25,7 @@ return new class extends Migration {
             $table->string('gambar')->nullable(false);
             $table->string('status')->default('Pending');
             $table->timestamps();
-
+            $table->string('rate')->nullable();
             $table->foreign('email')->references('email')->on('users');
             $table->foreign('user_id')->references('id')->on('users');
         });

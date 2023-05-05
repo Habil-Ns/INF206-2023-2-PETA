@@ -173,6 +173,51 @@ span{
 
 
 /*=======================  Halaman Pemandu Wisata ===========================*/
+
+
+.rate input{
+  display: none;
+}
+.rate  label{
+  float: right;
+  font-size: 50px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+}
+.rate  label:before{
+  content: '★';
+
+}
+.rate  input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+  border-radius: 3%;
+}
+.rate :not(:checked) > label:hover,
+.rate :not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.rate  input:checked > label:hover,
+.rate  input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.rate  .result:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 50%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 30px;
+  font-weight: 500;
+  color: gold;
+  font-family: 'Poppins', sans-serif;
+  display: none;
+}
+
+
 .title h1{
     font-family: var(--title-font);
     font-weight: var(--title-weight);
