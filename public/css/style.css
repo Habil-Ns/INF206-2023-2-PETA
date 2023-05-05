@@ -41,16 +41,21 @@ span{
 }
 
 /* =========================== NAV ============================== */
+.navigation{
+    display: flex;
+    align-items: center;
+}
+
 .nav_brand{
     font-family: var(--brand-font);
     font-size: var(--brand-size);
     color: #000000;
-    margin-top: .8rem;
 }
 
 .nav_list{
     display: flex;
     align-items: center;
+    margin-top: 1rem;
 }
 
 .nav_item:not(:last-child) {
@@ -63,11 +68,57 @@ span{
 
 .nav_link{
     color: var(--text-color);
-    padding: .2rem .5rem;
+    padding-right: .7rem;
+    margin: auto 0;
     text-decoration: none;
     font-size: var(--nav-size);
     display: inline-block; 
     font-family: var(--text-font);
+}
+
+
+.nav-user{
+    display: block;
+    padding-top: .3rem;
+    color: var(--brand-color);
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+#submenu-user{
+    height: 75px;
+}
+
+#nav-dashboard, #nav-keluar{
+    padding: .2rem .4rem;
+    color: #000000;
+    text-decoration: none;
+    font-family: var(--text-font);
+    font-size: var(--nav-size);
+    background-color: transparent;
+}
+
+#nav-dashboard:hover, #nav-keluar:hover{
+    opacity: .4;
+}
+
+#masuk-admin, #masuk-pemandu{
+    font-size: var(--nav-size);
+}
+
+#navbarDropdown:hover{
+    color: var(--brand-color);
+    opacity: .6;
+}
+
+#dropdown-width{
+    min-width: 1rem;
+}
+
+#dropdown-divider{
+    margin: .1rem 0;
 }
 
 .nav_link:hover, .submenu a:hover{
@@ -143,11 +194,15 @@ span{
     align-self: center;
 }
 
-.btn-pesan_landing{
+.btn-pesan_landing, .btn-terima_wisatawan, .btn-tolak_wisatawan{
     padding: .3em 1.3em;
     border-radius: 10px;
     background-color: #1BB580;
     border: none;
+}
+
+.btn-tolak_wisatawan{
+    background-color: var(--button-tolak-color);
 }
 
 .btn-pesan_landing a{

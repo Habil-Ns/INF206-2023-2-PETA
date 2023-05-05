@@ -37,7 +37,7 @@
                                     -
                                 @endif
                             </td>
-                            <td class="text-center"><a href="{{url ("peta/pemanduwisata/$registration->nama")}}" class="btn btn-info">Detail</a></td>           
+                            <td class="text-center"><a href="{{url ("peta/pemanduwisata/$registration->nama")}}" class="btn btn-info" style="font-family:'Patua One'; font-weight: 400;">Detail</a></td>           
                         </tr>
                     @endif
                 @endforeach
