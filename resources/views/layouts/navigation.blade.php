@@ -63,7 +63,7 @@
                         <a class="nav-user dropdown-toggle" href="#" id="navbarDropdown"
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Hi, {{ auth()->user()->username }}</a>
-                        <ul class="dropdown-menu dropdown-menu-lg-end p-0 custom-dropdown" aria-labelledby="navbarDropdown" id="dropdown-width" style="transform: translate3d(-12px, 29px, 0px);">
+                        <ul class="dropdown-menu dropdown-menu-lg-end p-0" aria-labelledby="navbarDropdown" id="dropdown-width" style="transform: translate3d(-12px, 29px, 0px);">
                             <li><a class="link-dashboard" href="/dashboard" id="nav-dashboard">Dashboard</a></li>
                             <li><hr class="dropdown-divider" id="dropdown-divider"></li>
                             <li>
