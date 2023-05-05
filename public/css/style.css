@@ -441,6 +441,10 @@ a.btn-kembali svg {
 
 
 /* ====================== Tempat Wisata ========================== */
+.margin-wisata{
+    margin-top: 2.5rem;
+}
+
 .blurb h1{
     font-family: var(--brand-font);
     font-size: var(--title-size);
@@ -561,7 +565,7 @@ a.btn-kembali svg {
     background-color: var(--button-color);
     border: none;
     color: var(--text-color);
-    padding: .3em 1.5em;
+    padding: .3em 2.3em;
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);
@@ -747,6 +751,10 @@ a.btn-kembali svg {
     padding: 10px;
     border-radius: 10px;
     max-width: 1055px;
+}
+
+.peta_bandaaceh-margin{
+    margin-top: 3.5rem;
 }
 
 .title-petabandaaceh{

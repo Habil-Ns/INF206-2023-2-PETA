@@ -3,6 +3,16 @@
 /public/build
 /public/hot
 /public/storage
+/public/cv/*.pdf
+/public/gambar/*.png
+/public/gambar/*.jpg
+/public/gambar/*.jpeg
+/public/gambar/*.gif
+/public/gambar/*.psd
+/public/gambar/*.tiff
+/public/gambar/*.raw
+/public/gambar/*.ai
+/public/gambar/*.heif
 /storage/*.key
 /vendor
 .env
