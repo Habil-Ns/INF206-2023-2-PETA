@@ -9,12 +9,15 @@
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="{{ asset('swiper/swiper-bundle.css') }}">
-    <!-- Css -->
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CSS -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <!--================= UNICONS ======================-->
+    <!-- UNICONS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+    
 
 <body>
     <header class="head" id="header">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@400;600&family=Source+Serif+Pro:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Poppins:wght@400;600&family=Source+Serif+Pro:wght@400;700&display=swap');
 
 
 *, *::before, *::after{
@@ -18,6 +18,7 @@
     --text-color: #000000;
     --text-second-color: #515151;
     --text-label-color: #5B636A;
+    --footer-text-color: #302F2F;
     --text-font: 'Poppins', sans-serif;
     --title-font: 'Source Serif Pro', serif;
     --brand-font: 'Patua One', cursive;
@@ -30,6 +31,7 @@
     --title-weight: 700;
     --button-weight: 600;
     --text-weight: 400;
+   
 }
 
 ul{
@@ -893,6 +895,7 @@ a.btn-kembali svg {
     display: inline-block;
 }
 
+
 /* ====================== Footer ==================== */
 #footer {
     background-color: #76E1BC;
@@ -903,6 +906,16 @@ a.btn-kembali svg {
     justify-content: flex-end;
 }
 
+.services-peta{
+    justify-content: flex-end;
+    margin-left: 5rem;
+}
+
+
+.footer_tujuan-text{
+    font-family: var(--text-font);
+}
+
 .footer-text{
     text-decoration: none;
     font-size: 1.15rem;
@@ -910,15 +923,42 @@ a.btn-kembali svg {
     font-weight: var(--text-weight);
 }
 
-.footer-text:hover{
+.footer-service-text{
+    text-decoration: none;
+    font-family: var(--brand-font);
+    font-size: 1.08rem;
+}
+
+.footer-icons{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    column-gap: 1.5rem;
+    flex-direction: column;
+}
+
+.footer-social{
+    font-size: 1.75rem;
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+
+.footer-social:hover{
     color: var(--footer-text-color);
     opacity: .6;
 }
 
-.copyright, .footer-text{
+.footer-text:hover, .footer-service-text:hover{
+    color: var(--footer-text-color);
+    opacity: .6;
+}
+
+.copyright, .footer-text, .footer-service-text{
     color: var(--footer-text-color);
 }
 
 .copyright{
     font-size: .875rem;
+    font-family: var(--title-font);
+    font-weight: 400;
 }
