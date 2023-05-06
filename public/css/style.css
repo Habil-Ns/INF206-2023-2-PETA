@@ -320,7 +320,7 @@ span{
 }
 
 .btn-detail, .btn-pesan{
-    padding: .3em .5em;
+    padding: .3em .57em;
     border-radius: 10px;
     background-color: #1BB580;
     border: none;
@@ -565,7 +565,7 @@ a.btn-kembali svg {
     background-color: var(--button-color);
     border: none;
     color: var(--text-color);
-    padding: .4em 2.55em;
+    padding: .4em 2.4em;
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);
