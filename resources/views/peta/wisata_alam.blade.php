@@ -7,11 +7,11 @@
 
 
 @section('content')
-<<<<<<< HEAD
+
     <div class="container margin-wisata" id="wisata_alam">
-=======
-    <div class="container mt-7" id="wisata_alam">
->>>>>>> 2108107010083-Faiza
+
+    <div class="container mt-6" id="wisata_alam">
+
         <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/pantai_ulee.jpg')}}"  alt="Pantai Ulee Lheue" srcset="" class="img-fluid" width="458px" height="329px">

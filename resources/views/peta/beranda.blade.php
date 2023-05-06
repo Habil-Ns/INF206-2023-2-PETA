@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<header class="header container mt-4">
+<header class="header container mt-5">
         <div class="rows">
             <div class="content">
                 <h1 class="header_content">Pariwisata Banda Aceh</h1>

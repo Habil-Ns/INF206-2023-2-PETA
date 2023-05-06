@@ -7,11 +7,11 @@
 
 
 @section('content')
-<<<<<<< HEAD
+
     <div class="container margin-wisata" id="wisata_religi">
-=======
-    <div class="container mt-7" id="wisata_religi">
->>>>>>> 2108107010083-Faiza
+
+    <div class="container mt-6" id="wisata_religi">
+
         <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <img src="{{asset ('images/Masjid_Baiturrahman.jpg')}}"  alt="Masjid Raya Baiturrahman" srcset="" class="img-fluid" width="458px" height="329px">

@@ -49,7 +49,7 @@ span{
 .nav_brand{
     font-family: var(--brand-font);
     font-size: var(--brand-size);
-    color: #000000;
+    color: #252525;
 }
 
 .nav_list{
@@ -645,7 +645,10 @@ a.btn-kembali svg {
 }
 
 .card-img{
-    height: 770px;
+    height: 800px;
+    
+
+   
 }
 
 .login, .registrasi {
@@ -654,25 +657,29 @@ a.btn-kembali svg {
     text-align: center;
     margin: 0 auto;
     background: white;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
     height: 430px;
     width: 350px;
+    border-radius: 5%;
 }
 
 .content-card{
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
+    border-radius: 7%;
 }
 
 .card-title {
     text-align: center;
     font-family: var(--brand-font);
     font-size: 2.8125rem;
+    border-radius: 7%;
 }
 
 .form-{
     margin: 1.5rem 0 1.3rem 0;
+    border-radius: 7%;
 }
 
 .my-input{
@@ -730,6 +737,7 @@ a.btn-kembali svg {
     font-family: var(--text-font);
     color: #999999;
     font-size: var(--text-size);
+    border-radius: 7%;
 }
 
 .text-register{

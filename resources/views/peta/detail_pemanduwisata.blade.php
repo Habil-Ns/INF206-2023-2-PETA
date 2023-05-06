@@ -13,7 +13,7 @@
         </div>
 
         <div class="detail-content">
-            <div class="biodata-pemandu me-4">
+            <div class="biodata-pemandu mt-6">
                 <div class="mb-1">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control detail-input" id="nama" style="background-color: #E2F4FF; border: 1px solid black;" readonly value="{{$registration->nama}}">

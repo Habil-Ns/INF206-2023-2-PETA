@@ -7,7 +7,7 @@
 
 @section('content')
 
-    <div class="container mt-5" id="hotel">
+    <div class="container mt-6" id="hotel">
         <div class="row">
             <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
                 <div class="swiper-container custom-swiper" style="overflow: hidden;">
