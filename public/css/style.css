@@ -134,13 +134,15 @@ span{
     opacity: .7;
 }
 
-.submenuwisata, .submenugaleri, .submenupemandu, .submenupengguna{
+.submenuwisata, .submenugaleri, .submenupemandu, .submenuhubungi{
     display: none;
 }
 
-.submenuwisata.active, .submenugaleri.active, .submenupemandu.active, .submenupengguna.active{
+
+.submenuwisata.active, .submenugaleri.active, .submenupemandu.active, .submenuhubungi.active{
     display: block;
 }
+
 
 .submenu a{
     text-decoration: none;
@@ -392,6 +394,7 @@ span{
     visibility: visible;
 }
 /* =========================== Halaman Detail Pemandu ================================= */
+/* =========================== Halaman Detail Pemandu ================================= */
 .detail-content {
     display: flex;
     justify-content: space-between;
@@ -400,6 +403,17 @@ span{
     padding: 1.8rem 3rem;
     margin: 2rem 0;
 }
+
+.button-update:hover{
+    background-color: var(--button-color);
+    opacity: .7;
+  }
+
+
+  #btn-update{
+    font-family: var(--brand-font);
+    font-weight: 400;
+  }
 
 .mb-1 label{
     font-family: var(--text-font);
@@ -573,12 +587,14 @@ a.btn-kembali svg {
     background-color: var(--button-color);
     border: none;
     color: var(--text-color);
-    padding: .4em 2.4em;
+    margin-bottom: 2rem;
+    padding: .3em 1.8em;
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);
     font-size: 1.24rem;
     color: #252525;
+
     
 }
 
@@ -633,7 +649,7 @@ a.btn-kembali svg {
 }
 
 .margin-sejarah{
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
 }
 
 .image-sejarah{
@@ -967,4 +983,38 @@ a.btn-kembali svg {
     font-size: .875rem;
     font-family: var(--title-font);
     font-weight: 400;
+}
+/*ntar */
+
+#submenuhubungi{
+    width: 190px;
+}
+
+#submenuwisata{
+    width: 230px;
+}
+
+#landing-page_container{
+    margin-top: 2.5rem;
+}
+
+#daftar_pemandu{
+    margin-top: 3.3rem;
+}
+
+#wisata_kuliner, #wisata_alam, #wisata_museum, #wisata_religi, #wisata_sejarah_budaya{
+    margin-top: 3.3rem;
+}
+
+#hotel{
+    margin-top: 3.3rem;
+}
+
+.hubungi-text{
+    font-family: var(--title-font);
+    font-size: 2rem;
+}
+
+#container-pendaftaran_pemandu{
+    margin-top: 4.2rem;
 }

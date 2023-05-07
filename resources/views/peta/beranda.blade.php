@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<header class="header container mt-5">
+    <header class="header container" id="landing-page_container">
         <div class="rows">
             <div class="content">
                 <h1 class="header_content">Pariwisata Banda Aceh</h1>
@@ -20,23 +20,24 @@
             </div>
             <div class="swiper-containers custom-swiper image_content" style="overflow: hidden;">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="{{asset ('images/Beranda_Masjid_Baiturrahman.png')}}" alt="Masjid Baiturrahman" srcset=""
-                            class="img-fluid" width="458px" height="329px"></div>
-                    <div class="swiper-slide"><img src="{{asset ('images/Beranda_museum_aceh.png')}}" alt="Museum Aceh" srcset=""
-                            class="img-fluid" width="458px" height="329px"></div>
-                    <div class="swiper-slide"><img src="{{asset ('images/Beranda_museum_tsunami.png')}}" alt="Museum Tsunami" srcset=""
-                            class="img-fluid" width="458px" height="329px"></div>
-                    <div class="swiper-slide"><img src="{{asset ('images/Beranda_pltd_apung.png')}}" alt="PLTD Apung" srcset=""
-                            class="img-fluid" width="458px" height="329px"></div>
-                    <div class="swiper-slide"><img src="{{asset ('images/Beranda_Pantai_Lampuuks.png')}}" alt="Pantai Lampuuk" srcset=""
-                            class="img-fluid" width="458px" height="329px"></div>
-                    <div class="swiper-slide"><img src="{{asset ('images/Beranda_Airterjun_kutamalaka.png')}}" alt="Air Terjun Kuta Malaka" srcset=""
-                            class="img-fluid" width="458px" height="329px"></div>
+                    <div class="swiper-slide"><img src="{{ asset('images/Beranda_Masjid_Baiturrahman.png') }}"
+                            alt="Masjid Baiturrahman" srcset="" class="img-fluid" width="458px" height="329px"></div>
+                    <div class="swiper-slide"><img src="{{ asset('images/Beranda_museum_aceh.png') }}" alt="Museum Aceh"
+                            srcset="" class="img-fluid" width="458px" height="329px"></div>
+                    <div class="swiper-slide"><img src="{{ asset('images/Beranda_museum_tsunami.png') }}"
+                            alt="Museum Tsunami" srcset="" class="img-fluid" width="458px" height="329px"></div>
+                    <div class="swiper-slide"><img src="{{ asset('images/Beranda_pltd_apung.png') }}" alt="PLTD Apung"
+                            srcset="" class="img-fluid" width="458px" height="329px"></div>
+                    <div class="swiper-slide"><img src="{{ asset('images/Beranda_Pantai_Lampuuks.png') }}"
+                            alt="Pantai Lampuuk" srcset="" class="img-fluid" width="458px" height="329px"></div>
+                    <div class="swiper-slide"><img src="{{ asset('images/Beranda_Airterjun_kutamalaka.png') }}"
+                            alt="Air Terjun Kuta Malaka" srcset="" class="img-fluid" width="458px" height="329px">
+                    </div>
                 </div>
             </div>
         </div>
         <button class="btn-pesan_landing">
-            <a href="{{url ("peta/pemanduwisata")}}" class="pesan-pemandu">Pesan Pemandu</a>
+            <a href="{{ url('peta/pemanduwisata') }}" class="pesan-pemandu">Pesan Pemandu</a>
         </button>
     </header>
     @include('layouts.footer')
