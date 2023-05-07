@@ -14,7 +14,7 @@ PETA-Pemandu Wisata | Pemandu Wisata
     <div class="daftar-pemandu mt-4">
         <div class="left-content">
             <p>Nama: {{$registration->nama}}</p>
-            
+           
             <div class="rate">
                 <p>Penilaian:</p> 
                 <input type="radio" id="five" name="rate" value="5">
@@ -75,11 +75,13 @@ PETA-Pemandu Wisata | Pemandu Wisata
             
         </div>
         <div class="right-content">
+            @if ($registration->status != 'Cuti')
             <div class="button-pesan">
                 <button class="btn-pesan">
                     <a href="#" class="text-pesan">Pesan</a>
                 </button>
             </div>
+            @endif
             <div class="button-detail">
                 <button class="btn-detail">
                     <a href="{{url ("peta/pemanduwisata/$registration->nama")}}" class="detail-pemandu">Detail</a>

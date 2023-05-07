@@ -11,13 +11,12 @@
     <link rel="stylesheet" href="{{ asset('swiper/swiper-bundle.css') }}">
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- CSS -->
+    <!-- Css -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <!-- UNICONS -->
+    <!--================= UNICONS ======================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
-    
 
 <body>
     <header class="head" id="header">
@@ -54,7 +53,7 @@
                     <li class="nav_item">
                         <a href="#" class="nav_link">Pemandu Wisata</a>
                         <ul class="submenu submenupemandu">
-                            <li><a href="{{ url('peta/pemanduwisata/pendaftaran') }}">Pendaftaran</a></li>
+                        <li><a href="{{ url('peta/pendaftaran') }}">Pendaftaran</a></li>
                             <li><a href="{{ url('peta/pemanduwisata') }}">Daftar Pemandu</a></li>
                         </ul>
                     </li>
@@ -79,16 +78,9 @@
                     </li>
                     @else
                     <li class="nav_item">
-                        <a href="#" class="nav_link">
-                            <img class="img_pengguna" src="{{ asset('images/user.png') }}" alt="User" width=56px
-                                height=56px>
-                        </a>
-                        <ul class="submenu submenupengguna" id="submenu-user">
-                            <li><a href="{{ url('peta/login') }}" id="masuk-admin">Masuk Sebagai Admin</a></li>
-                            <li><a href="{{ url('peta/login') }}" id="masuk-pemandu">Masuk Sebagai Pemandu Wisata</a></li>
-                        </ul>
-                        @endauth
+                            <a href="{{ url('peta/login') }}" class="nav_link nav-user"><i class='bx bx-log-in icon-masuk'></i>Masuk</a>
                     </li>
+                    @endauth
                 </ul>
             </div>
         </nav>

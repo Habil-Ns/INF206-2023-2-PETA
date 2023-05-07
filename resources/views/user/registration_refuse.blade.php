@@ -12,6 +12,6 @@
         <div class="alert alert-success">
             <p>Jika ingin mendaftar, silahkan register dan login terlebih dahulu</p>
         </div>
-        <a href="{{ url('peta/login') }}" class="btn btn-primary">Ke Menu Login</a>
+        <a href="{{ url('peta/login') }}" class="btn btn-primary">Ke Menu Masuk</a>
     </div>
 @endsection

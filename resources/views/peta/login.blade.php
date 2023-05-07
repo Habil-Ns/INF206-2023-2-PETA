@@ -16,11 +16,7 @@
 <div class="login-page">
     <div class="image_login">
         <img src="{{asset ('images/masjidraya_login.jpg')}}" alt="Masjid Raya Baiturrahman" class="card-img">
-        
     </div>
-
-    
-
     <div class="login">
         @if (session()->has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">

@@ -17,7 +17,7 @@
                         <th>Detail</th>
                     </tr>
                     @foreach ($registrations as $registration)
-                    @if ($registration->status == 'Diterima' || $registration->status == 'Pending')
+                    @if ($registration->status == 'Diterima' || $registration->status == 'Pending' || $registration->status == 'Cuti')
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $registration->nama }}</td>
@@ -37,7 +37,14 @@
                                     -
                                 @endif
                             </td>
-                            <td class="text-center"><a href="{{url ("peta/pemanduwisata/$registration->nama")}}" class="btn btn-info" style="font-family:'Patua One'; font-weight: 400;">Detail</a></td>           
+                            <td class="d-flex gap-2" style="justify-content: center">
+                                <a href="{{url ("peta/pemanduwisata/$registration->nama")}}" class="btn btn-info" style="font-family:'Patua One'; font-weight: 400;">Detail</a>
+                                <form method="POST" action="{{ url("cvpemandu/$registration->nama") }}">
+                                    @csrf
+                                    @method('PUT')
+                                      <button type="submit" class="btn btn-warning" style="font-family:'Patua One'; font-weight: 400;">Izin</button>
+                                  </form>   
+                            </td>           
                         </tr>
                     @endif
                 @endforeach

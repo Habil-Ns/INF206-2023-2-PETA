@@ -22,8 +22,11 @@ Route::get('peta', [PetaController::class, 'index']);
 
 Route::get('peta/pemanduwisata', [PetaController::class, 'pemanduwisata']);
 Route::post('peta/pemanduwisata', [PetaController::class, 'store']);
-Route::post('peta/pemesanan', [PetaController::class, 'storeorder']);
+Route::get('peta/pemanduwisata/{nama}', [PetaController::class, 'detail'])->name('pemanduwisata.detail');
+Route::get('peta/pemanduwisata/{id}/edit', [PetaController::class, 'update'])->name('registration.edit');
+Route::put('peta/pemanduwisata/{id}', [PetaController::class, 'updateStore'])->name('registration.update');
 
+Route::post('peta/pemesanan', [PetaController::class, 'storeorder']);
 
 Route::get('peta/wisata/wisatamuseum', [PetaController::class, 'museum']);
 
@@ -40,11 +43,9 @@ Route::get('peta/galeri/hotel', [PetaController::class, 'hotel']);
 Route::get('peta/hubungikami', [PetaController::class, 'hub']);
 Route::post('peta/hubungikami', [PetaController::class, 'storesaran']);
 
-Route::get('peta/pemanduwisata/pendaftaran', [PetaController::class, 'pendaftaran']);
+Route::get('peta/pendaftaran', [PetaController::class, 'pendaftaran']);
 
-Route::get('peta/pemanduwisata/{nama}', [PetaController::class, 'detail']);
-
-Route::get('peta/sejarah', [PetaController::class, 'sejarah']);
+Route::get('peta/sejarah', [PetaController::class, 'sejarah']); 
 
 Route::get('peta/login', [PetaController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [PetaController::class, 'authenticate']);
@@ -82,6 +83,13 @@ Route::put('peta/pemanduwisata/{nama}/terima', function ($nama) {
         ->where('nama', $nama)
         ->update(['status' => 'Diterima']);
     return redirect('peta/pemanduwisata')->with('success', 'Registration status updated successfully');
+})->middleware('admin');
+
+Route::put('cvpemandu/{nama}', function($nama) {
+    DB::table('registrations')
+        ->where('nama', $nama)
+        ->update(['status' => 'Cuti']);
+    return redirect('/dashboard/cvpemandu')->with('success', 'Tour Guide is holiday');
 })->middleware('admin');
 
 Route::put('orders/{nama}', function ($nama) {

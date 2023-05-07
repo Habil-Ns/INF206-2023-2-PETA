@@ -7,8 +7,6 @@
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-light w-100 rounded-0 border-0" type="text" placeholder="Search"
-        aria-label="Search">
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
             <form action="/logout" method="post">

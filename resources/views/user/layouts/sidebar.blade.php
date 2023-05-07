@@ -7,10 +7,10 @@
                     Dashboard
                 </a>
             </li>
-            @if(auth()->check() && auth()->user()->registration && auth()->user()->registration->status === 'Diterima')
+            @if(auth()->check() && auth()->user()->registration && (auth()->user()->registration->status === 'Diterima' || auth()->user()->registration->status === 'Cuti'))
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/orders') ? 'active' : ''}}" href="/dashboard/orders">
-                    <span data-feather="file-text" class="align-text-bottom"></span>
+                    <span data-feather="clipboard" class="align-text-bottom"></span>
                     My Orders
                 </a>
             </li>
@@ -23,13 +23,13 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/cvpemandu*') ? 'active' : ''}}" href="/dashboard/cvpemandu">
-                    <span data-feather="file-text" class="align-text-bottom"></span>
+                    <span data-feather="users" class="align-text-bottom"></span>
                     CV Pemandu
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/daftarsaran*') ? 'active' : ''}}" href="/dashboard/daftarsaran">
-                    <span data-feather="file-text" class="align-text-bottom"></span>
+                    <span data-feather="inbox" class="align-text-bottom"></span>
                     Daftar Saran
                 </a>
             </li>

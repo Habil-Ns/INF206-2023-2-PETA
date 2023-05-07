@@ -106,8 +106,14 @@ span{
     opacity: .4;
 }
 
-#masuk-admin, #masuk-pemandu{
+#masuk{
     font-size: var(--nav-size);
+}
+
+.icon-masuk{
+    position: relative;
+    top: 1px;
+    margin-right: .2rem;
 }
 
 #navbarDropdown:hover{
@@ -246,7 +252,7 @@ span{
 
 }
 .rate  input:checked ~ label{
-  color: gold;
+  color: #ffbd1b;
   text-shadow: 1px 1px #c60;
   border-radius: 3%;
 }
