@@ -54,7 +54,7 @@
                     <li class="nav_item">
                         <a href="#" class="nav_link">Pemandu Wisata</a>
                         <ul class="submenu submenupemandu">
-                            <li><a href="{{ url('peta/pemanduwisata/pendaftaran') }}">Pendaftaran</a></li>
+                            <li><a href="{{ url('peta/pendaftaran') }}">Pendaftaran</a></li>
                             <li><a href="{{ url('peta/pemanduwisata') }}">Daftar Pemandu</a></li>
                         </ul>
                     </li>
