@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="{{ asset('swiper/swiper-bundle.css') }}">
     <!-- boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- Css -->
+    <!-- CSS -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <!--================= UNICONS ======================-->
+    <!-- UNICONS -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
+
 
 <body>
     <header class="head" id="header">
@@ -41,9 +42,9 @@
                     </li>
                     <li class="nav_item">
                         <a href="#" class="nav_link">Wisata Banda Aceh</a>
-                        <ul class="submenu submenuwisata">
+                        <ul class="submenu submenuwisata" id="submenuwisata">
                             <li><a href="{{ url('peta/wisata/wisatamuseum') }}">Wisata Museum</a></li>
-                            <li><a href="{{ url('peta/wisata/wisatasejarahbudaya') }}">Wisata Sejarah dan Budaya</a>
+                            <li><a href="{{ url('peta/wisata/wisatasejarahbudaya') }}">Wisata Sejarah & Budaya</a>
                             </li>
                             <li><a href="{{ url('peta/wisata/wisatareligi') }}">Wisata Religi</a></li>
                             <li><a href="{{ url('peta/wisata/wisatakuliner') }}">Wisata Kuliner</a></li>
@@ -53,34 +54,44 @@
                     <li class="nav_item">
                         <a href="#" class="nav_link">Pemandu Wisata</a>
                         <ul class="submenu submenupemandu">
-                        <li><a href="{{ url('peta/pendaftaran') }}">Pendaftaran</a></li>
+                            <li><a href="{{ url('peta/pemanduwisata/pendaftaran') }}">Pendaftaran</a></li>
                             <li><a href="{{ url('peta/pemanduwisata') }}">Daftar Pemandu</a></li>
                         </ul>
                     </li>
                     <li class="nav_item">
-                        <a href="{{ url('peta/hubungikami') }}" class="nav_link">Hubungi Kami</a>
-                    </li>
-                    @auth
-                    <li class="nav_item dropdown">
-                        <a class="nav-user dropdown-toggle" href="#" id="navbarDropdown"
-                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hi, {{ auth()->user()->username }}</a>
-                        <ul class="dropdown-menu dropdown-menu-lg-end p-0" aria-labelledby="navbarDropdown" id="dropdown-width" style="transform: translate3d(-12px, 29px, 0px);">
-                            <li><a class="link-dashboard" href="/dashboard" id="nav-dashboard">Dashboard</a></li>
-                            <li><hr class="dropdown-divider" id="dropdown-divider"></li>
-                            <li>
-                                <form action="/logout" method="post">
-                                    @csrf
-                                    <button type="submit" class="dropdown-item" id="nav-keluar">Keluar</button>
-                                </form>
+                        <a href="#" class="nav_link">Hubungi & Penilaian</a>
+                        <ul class="submenu submenuhubungi" id="submenuhubungi">
+                            <li><a href="{{ url('peta/hubungi&penilaian/hubungikami') }}">Hubungi Kami</a></li>
+                            <li><a href="{{ url('peta/hubungi&penilaian/penilaianpemandu') }}">Penilaian Pemandu</a>
                             </li>
                         </ul>
                     </li>
+                    @auth
+                        <li class="nav_item dropdown">
+                            <a class="nav-user dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Hi, {{ auth()->user()->username }}</a>
+                            <ul class="dropdown-menu dropdown-menu-lg-end p-0" aria-labelledby="navbarDropdown"
+                                id="dropdown-width" style="transform: translate3d(-12px, 29px, 0px);">
+                                <li><a class="link-dashboard" href="/dashboard" id="nav-dashboard">Dashboard</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" id="dropdown-divider">
+                                </li>
+                                <li>
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item" id="nav-keluar">Keluar</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
                     @else
-                    <li class="nav_item">
-                            <a href="{{ url('peta/login') }}" class="nav_link nav-user"><i class='bx bx-log-in icon-masuk'></i>Masuk</a>
-                    </li>
+                        <li class="nav_item">
+                            <a href="{{ url('peta/login') }}" class="nav_link nav-user"><i
+                                    class='bx bx-log-in icon-masuk'></i>Masuk</a>
+                        </li>
                     @endauth
+                    </li>
                 </ul>
             </div>
         </nav>
