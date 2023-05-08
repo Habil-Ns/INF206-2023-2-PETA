@@ -1,18 +1,15 @@
 @extends('layouts.navigation')
 
 @section('title')
-    PETA-Pemandu Wisata | Hubungi Kami
+    PETA-Pemandu Wisata | Penilaian Pemandu
 @endsection
 
 @section('content')
     <div class="container mt-5">
         <div class="title">
-            <h1>Pariwisata Banda Aceh</h1>
+            <h1>Penilaian Pemandu</h1>
         </div>
-        <div class="hubungi">
-            <h1 class="hubungi-text">Hubungi Kami</h1>
-        </div>
-        <form action="{{ url('peta/hubungi&penilaian/hubungikami') }}" method="POST" enctype="multipart/form-data"
+        <form action="{{ url('peta/hubungi&penilaian/penilaianpemandu') }}" method="POST" enctype="multipart/form-data"
             style="max-width: 900px; margin: 0 auto">
             @csrf
             <div class="mb-3">
@@ -21,9 +18,13 @@
                     aria-describedby="nameHelp">
             </div>
             <div class="mb-3">
-                <label class="hubungikami-text"for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="email" name="email" class="form-control my-input" id="exampleInputEmail1"
-                    aria-describedby="emailHelp">
+                <select class="form-select pemandu-option" name="gender" aria-label="Default select example">
+                    <option class="pemandu-option" selected>Jenis Kelamin</option>
+                    <option class="pemandu-option" selected>Pilih Pemandu</option>
+                    @foreach ($registrations as $registration)
+                        <option class="pemandu-option" value="{{ $registration->nama }}">{{ $registration->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="mb-3">
                 <label class="hubungikami-text" for="exampleFormControlTextarea1" class="form-label">Komentar</label>

@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <div class="container margin-wisata" id="wisata_museum">
+    <div class="container margin-wisata" id="wisata_museum" style="margin-top: 3.3rem;">
 
         <div class="container" id="wisata_museum">
 
@@ -63,8 +63,8 @@
 
             <div class="row align-items-center mt-3">
                 <div class="col-md-6 order-2 mt-3 d-flex justify-content-end">
-                    <img src="{{ asset('images/pltd_apung.jpg') }}" alt="Museum PLTD Apung" srcset=""
-                        class="img-fluid" width="458px" height="329px">
+                    <img src="{{ asset('images/pltd_apung.jpg') }}" alt="Museum PLTD Apung" srcset="" class="img-fluid"
+                        width="458px" height="329px">
                 </div>
                 <div class="col-md-6 order-1">
                     <div class="justify-content-center text-center">

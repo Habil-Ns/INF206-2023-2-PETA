@@ -183,6 +183,11 @@ class PetaController extends Controller
         return view('peta.hubungikami');
     }
 
+    public function penilaianPemandu()
+    {
+        return view('peta.penilaianpemandu');
+    }
+
     public function login()
     {
         return view('peta.login');
@@ -231,14 +236,14 @@ class PetaController extends Controller
         $keahlian = $request->input('keahlian');
         $kelebihan = $request->input('kelebihan');
         $kekurangan = $request->input('kekurangan');
-    
+
         // Check if a new image is uploaded
         if ($request->hasFile('gambar')) {
             $pindah_gambar = $request->file('gambar');
             $namafile_gambar = Str::random(40) . '.' . $pindah_gambar->getClientOriginalExtension();
-    
+
             $pindah_gambar->move(public_path() . '/gambar', $namafile_gambar);
-    
+
             // Update the record with the new image
             DB::table('registrations')
                 ->where('id', $id)
@@ -272,7 +277,7 @@ class PetaController extends Controller
         }
         return redirect()->route('pemanduwisata.detail', ['nama' => $nama])->with('success', 'Pemandu wisata updated successfully.');
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -346,7 +351,7 @@ class PetaController extends Controller
             'gender' => $gender,
             'status' => "Belum diproses",
         ]);
-        
+
         // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
         return view('user.order_done');
     }
@@ -354,13 +359,13 @@ class PetaController extends Controller
     public function rate(Request $request, $store)
     {
         $rate = $request->input('rate');
-        
 
-        DB::table($store.'_rate')->insert([
+
+        DB::table($store . '_rate')->insert([
             'rate' => $rate,
-            
+
         ]);
-        
+
         return view('peta.pemanduwisata');
     }
 }

@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <div class="container margin-wisata" id="wisata_sejarah_budaya">
+    <div class="container margin-wisata" id="wisata_sejarah_budaya" style="margin-top: 3.3rem;">
 
         <div class="container" id="wisata_sejarah_budaya">
 
@@ -35,9 +35,8 @@
 
             <div class="row align-items-center mt-3">
                 <div class="col-md-6 order-1 mt-3">
-                    <img src="{{ asset('images/makam_sultan_iskandarmuda.jpg') }}"
-                        alt="Makam Sultan Aceh XIV Iskandar Muda" srcset="" class="img-fluid" width="458px"
-                        height="329px">
+                    <img src="{{ asset('images/makam_sultan_iskandarmuda.jpg') }}" alt="Makam Sultan Aceh XIV Iskandar Muda"
+                        srcset="" class="img-fluid" width="458px" height="329px">
                 </div>
                 <div class="col-md-6 order-2 d-flex justify-content-end">
                     <div class="justify-content-center text-center">

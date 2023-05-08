@@ -40,12 +40,16 @@ Route::get('peta/wisata/wisataalam', [PetaController::class, 'alam']);
 
 Route::get('peta/galeri/hotel', [PetaController::class, 'hotel']);
 
-Route::get('peta/hubungikami', [PetaController::class, 'hub']);
-Route::post('peta/hubungikami', [PetaController::class, 'storesaran']);
+
+Route::get('peta/hubungi&penilaian/hubungikami', [PetaController::class, 'hub']);
+Route::post('peta/hubungi&penilaian/hubungikami', [PetaController::class, 'storesaran']);
+
+Route::get('peta/hubungi&penilaian/penilaianpemandu', [PetaController::class, 'penilaianPemandu']);
+Route::post('peta/hubungi&penilaian/penilaianpemandu', [PetaController::class, 'storepenilaian']);
 
 Route::get('peta/pendaftaran', [PetaController::class, 'pendaftaran']);
 
-Route::get('peta/sejarah', [PetaController::class, 'sejarah']); 
+Route::get('peta/sejarah', [PetaController::class, 'sejarah']);
 
 Route::get('peta/login', [PetaController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login', [PetaController::class, 'authenticate']);
@@ -85,7 +89,7 @@ Route::put('peta/pemanduwisata/{nama}/terima', function ($nama) {
     return redirect('peta/pemanduwisata')->with('success', 'Registration status updated successfully');
 })->middleware('admin');
 
-Route::put('cvpemandu/{nama}', function($nama) {
+Route::put('cvpemandu/{nama}', function ($nama) {
     DB::table('registrations')
         ->where('nama', $nama)
         ->update(['status' => 'Cuti']);

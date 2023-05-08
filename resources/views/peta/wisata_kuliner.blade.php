@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <div class="container margin-wisata" id="wisata_kuliner">
+    <div class="container margin-wisata" id="wisata_kuliner" style="margin-top: 3.3rem;">
 
         <div class="container" id="wisata_kuliner">
 
