@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container mt-5">
+    <div class="container" style="margin-top: 3.5rem">
         <div class="title">
             <h1>Pariwisata Banda Aceh</h1>
         </div>

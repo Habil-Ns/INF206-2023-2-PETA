@@ -251,36 +251,35 @@ span{
 #daftar_pemandu{
     margin-top: 3.3rem;
 }
-
-.rate input{
-  display: none;
+.rate {
+  display: flex;
+  align-items: center;
 }
-.rate  label{
+
+.rate p {
+  margin-right: 10px;
+  margin-bottom: 1rem;
+}
+
+.rate label {
   float: right;
-  font-size: 50px;
+  font-size: 2rem;
   color: lightgrey;
-  margin: 0 5px;
+  margin-bottom: .85rem;
+  margin-right: .2rem;
   text-shadow: 1px 1px #bbb;
 }
-.rate  label:before{
-  content: '★';
 
+.rate label:before {
+  content: '★';
 }
-.rate  input:checked ~ label{
-  color: #ffbd1b;
-  text-shadow: 1px 1px #c60;
-  border-radius: 3%;
-}
+
 .rate :not(:checked) > label:hover,
-.rate :not(:checked) > label:hover ~ label{
+.rate :not(:checked) > label:hover ~ label {
   color: gold;
 }
-.rate  input:checked > label:hover,
-.rate  input:checked > label:hover ~ label{
-  color: gold;
-  text-shadow: 1px 1px goldenrod;
-}
-.rate  .result:before{
+
+.rate .result:before {
   position: absolute;
   content: "";
   width: 100%;
@@ -293,6 +292,12 @@ span{
   font-family: 'Poppins', sans-serif;
   display: none;
 }
+
+.rate input{
+  display: none;
+}
+
+
 
 
 .title h1{
@@ -578,6 +583,60 @@ a.btn-kembali svg {
     font-family: var(--text-font);
 }
 
+
+/* ============================ Penilaian pemandu ======================= */
+.penilaian{
+    display: flex;
+    height: 46px;
+}
+
+.penilaian span {
+    display: inline-flex;
+    flex-flow: row-reverse;
+
+}
+
+
+
+  .penilaian label{
+    font-size: 2rem;
+    cursor: pointer;
+    color: lightgrey;
+    margin: 0 5px;
+    text-shadow: 1px 1px #bbb;
+   
+  }
+
+  .rtl {
+    direction: rtl;
+  }
+  .penilaian:not(:checked) > span input {
+    position: absolute;
+    right: 100vw;
+  }
+  
+  .penilaian:not(:checked) > span label {
+    width: 1em;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+  }
+  
+  .penilaian:not(:checked) > span label:before {
+    content: "★ ";
+  }
+  
+  .penilaian > span input:checked ~ label {
+    color: gold;
+  }
+  
+  .penilaian:not(:checked) > span label:hover,
+  .penilaian:not(:checked) > span label:hover ~ label {
+    color: gold;
+  }
+
 /* ========================== Pendaftaran Pemandu ============================== */
 #container-pendaftaran_pemandu{
     margin-top: 4.2rem;
@@ -613,7 +672,7 @@ a.btn-kembali svg {
     border: none;
     color: var(--text-color);
     margin-bottom: 2rem;
-    padding: .3em 1.8em;
+    padding: .25em 1.7em;
     border-radius: 10px;
     font-family: var(--brand-font);
     font-weight: var(--title-font);

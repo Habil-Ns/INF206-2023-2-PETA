@@ -185,7 +185,15 @@ class PetaController extends Controller
 
     public function penilaianPemandu()
     {
-        return view('peta.penilaianpemandu');
+        $registrations = DB::table('registrations')
+            ->select('nama')
+            ->get();
+
+        $view_data = [
+            'registrations' => $registrations
+        ];
+
+        return view('peta.penilaianpemandu', $view_data);
     }
 
     public function login()

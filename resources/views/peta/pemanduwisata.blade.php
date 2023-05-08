@@ -13,22 +13,24 @@
             @if ($registration->status != 'Pending')
                 <div class="daftar-pemandu mt-4">
                     <div class="left-content">
-                        <p>Nama: {{ $registration->nama }}</p>
+                        <p style="margin-top: .3rem">Nama: {{ $registration->nama }}</p>
 
                         <div class="rate">
-                            <p>Penilaian:</p>
-                            <input type="radio" id="five" name="rate" value="5">
-                            <label for="five"></label>
-                            <input type="radio" id="four" name="rate" value="4">
-                            <label for="four"></label>
-                            <input type="radio" id="three" name="rate" value="3">
-                            <label for="three"></label>
-                            <input type="radio" id="two" name="rate" value="2">
-                            <label for="two"></label>
-                            <input type="radio" id="one" name="rate" value="1">
-                            <label for="one"></label>
-                            <input type="button" onclick="submitRating()" value="Submit">
-                            <span id="rating-text"></span>
+                            <p class="penilaian-text">Penilaian:</p>
+                            <span>
+                                <input type="radio" id="five" name="rate" value="5">
+                                <label for="five"></label>
+                                <input type="radio" id="four" name="rate" value="4">
+                                <label for="four"></label>
+                                <input type="radio" id="three" name="rate" value="3">
+                                <label for="three"></label>
+                                <input type="radio" id="two" name="rate" value="2">
+                                <label for="two"></label>
+                                <input type="radio" id="one" name="rate" value="1">
+                                <label for="one"></label>
+                                <input type="button" onclick="submitRating()" value="Submit">
+                                <span id="rating-text"></span>
+                            </span>
                         </div>
 
                         <script>
@@ -72,11 +74,11 @@
                     </div>
                     <div class="right-content">
                         @if ($registration->status != 'Cuti')
-                        <div class="button-pesan">
-                            <button class="btn-pesan">
-                                <a href="#" class="text-pesan">Pesan</a>
-                            </button>
-                        </div>
+                            <div class="button-pesan">
+                                <button class="btn-pesan">
+                                    <a href="#" class="text-pesan">Pesan</a>
+                                </button>
+                            </div>
                         @endif
                         <div class="button-detail">
                             <button class="btn-detail">
