@@ -39,7 +39,7 @@ class PetaController extends Controller
     public function detail(string $nama)
     {
         $registration = DB::table('registrations')
-            ->select('id', 'nama', 'umur', 'gender', 'kontak', 'email', 'keahlian', 'kelebihan', 'kekurangan', 'gambar', 'status')
+            ->select('id', 'nama', 'umur', 'gender', 'kontak', 'email', 'keahlian', 'kelebihan', 'kekurangan', 'gambar', 'status', 'user_id')
             ->where('nama', $nama)
             ->first();
         $view_data = [

@@ -123,7 +123,7 @@
                     <img src="{{ asset('images/profile_pemandu.jpg') }}" alt="Profile Pemandu Wisata" width="260px" height="260px">
                 @endif
                 <div style="margin-top: 156%">
-                    @if (auth()->check() && (auth()->user()->can('admin') || auth()->user() && $registration->status === 'Cuti'))
+                    @if (auth()->check() && (auth()->user()->can('admin') || (auth()->user() && $registration->status === 'Cuti' && $registration->user_id === auth()->user()->id)))
                     <div style="display: inline-block; margin-right:10px;" >
                         <a href="{{ route('registration.edit', ['id' => $registration->id]) }}" class="btn btn-primary">Update</a>
                     </div>

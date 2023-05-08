@@ -71,11 +71,13 @@
                         </script>
                     </div>
                     <div class="right-content">
+                        @if ($registration->status != 'Cuti')
                         <div class="button-pesan">
                             <button class="btn-pesan">
                                 <a href="#" class="text-pesan">Pesan</a>
                             </button>
                         </div>
+                        @endif
                         <div class="button-detail">
                             <button class="btn-detail">
                                 <a href="{{ url("peta/pemanduwisata/$registration->nama") }}"
