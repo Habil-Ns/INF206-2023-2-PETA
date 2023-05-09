@@ -39,7 +39,7 @@ class PetaController extends Controller
     public function detail(string $nama)
     {
         $registration = DB::table('registrations')
-            ->select('id', 'nama', 'umur', 'gender', 'kontak', 'email', 'keahlian', 'kelebihan', 'kekurangan', 'gambar', 'status')
+            ->select('id', 'nama', 'umur', 'gender', 'kontak', 'email', 'keahlian', 'kelebihan', 'kekurangan', 'gambar', 'status', 'user_id')
             ->where('nama', $nama)
             ->first();
         $view_data = [
@@ -82,9 +82,23 @@ class PetaController extends Controller
     public function pendaftaran()
     {
         if (auth()->check() && auth()->user()) {
-            return view('peta.pendaftaran_pemandu');
-        } else
+            $user_id = auth()->user()->id;
+            $registration = DB::table('registrations')
+                ->select('status')
+                ->where('user_id', $user_id)
+                ->first();
+            if (!$registration) {
+                return view('peta.pendaftaran_pemandu');
+            }
+            if ($registration->status == 'Diterima' || $registration->status == 'Cuti') {
+                return view('user.registration_done');
+            }
+            if ($registration->status == 'Pending') {
+                return view('user.registration_pending');
+            }
+        } else {
             return view('user.registration_refuse');
+        }
     }
 
     public function sejarah()
@@ -169,6 +183,55 @@ class PetaController extends Controller
         return view('peta.hubungikami');
     }
 
+    public function penilaianPemandu()
+    {
+        $registrations = DB::table('registrations')
+            ->select('nama')
+            ->get();
+
+        return view('peta.penilaianpemandu', compact('registrations'));
+    }
+
+    public function storeRate(Request $request)
+    {
+        $namapenilai = $request->input('namapenilai');
+        $rate = $request->input('rate');
+        $pemandu = $request->input('pemandu');
+    
+        $pemanduRegistration = DB::table('registrations')->where('nama', $pemandu)->first();
+    
+        if ($pemanduRegistration) {
+            DB::table('rates')->insert([
+                'namapenilai' => $namapenilai,
+                'rate' => $rate,
+                'pemandu' => $pemanduRegistration->nama,
+            ]);
+    
+            // Calculate average rating for the pemandu
+            $averageRating = DB::table('rates')
+                ->where('pemandu', $pemanduRegistration->nama)
+                ->avg('rate');
+    
+            // Update the average rating in the registrations table
+            DB::table('registrations')
+                ->where('nama', $pemanduRegistration->nama)
+                ->update(['rate' => $averageRating]);
+        }
+    
+        return view('user.rating_done');
+    }    
+
+    public function showrate()
+    {   
+        $this->authorize('admin');
+        $registrations = DB::table('registrations')
+            ->select('nama')
+            ->distinct()
+            ->get();
+
+        return view('user.admin.ratings.index', compact('registrations'));
+    }
+
     public function login()
     {
         return view('peta.login');
@@ -195,10 +258,70 @@ class PetaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(string $id)
     {
-        //
+        $registration = DB::table('registrations')
+            ->select('id', 'nama', 'umur', 'gender', 'kontak', 'email', 'keahlian', 'kelebihan', 'kekurangan', 'gambar', 'status')
+            ->where('id', $id)
+            ->first();
+
+        $view_data = [
+            'registration' => $registration
+        ];
+        return view('peta.update_pemanduwisata', $view_data);
     }
+    public function updateStore(Request $request, string $id)
+    {
+        $nama = $request->input('nama');
+        $umur = $request->input('umur');
+        $gender = $request->input('jenis_kelamin');
+        $kontak = $request->input('nomor_hp');
+        $email = $request->input('email');
+        $keahlian = $request->input('keahlian');
+        $kelebihan = $request->input('kelebihan');
+        $kekurangan = $request->input('kekurangan');
+
+        // Check if a new image is uploaded
+        if ($request->hasFile('gambar')) {
+            $pindah_gambar = $request->file('gambar');
+            $namafile_gambar = Str::random(40) . '.' . $pindah_gambar->getClientOriginalExtension();
+
+            $pindah_gambar->move(public_path() . '/gambar', $namafile_gambar);
+
+            // Update the record with the new image
+            DB::table('registrations')
+                ->where('id', $id)
+                ->update([
+                    'nama' => $nama,
+                    'umur' => $umur,
+                    'gender' => $gender,
+                    'kontak' => $kontak,
+                    'email' => $email,
+                    'keahlian' => $keahlian,
+                    'kelebihan' => $kelebihan,
+                    'kekurangan' => $kekurangan,
+                    'gambar' => $namafile_gambar,
+                    'updated_at' => date('Y-m-d H:i:s')
+                ]);
+        } else {
+            // Update the record without changing the image
+            DB::table('registrations')
+                ->where('id', $id)
+                ->update([
+                    'nama' => $nama,
+                    'umur' => $umur,
+                    'gender' => $gender,
+                    'kontak' => $kontak,
+                    'email' => $email,
+                    'keahlian' => $keahlian,
+                    'kelebihan' => $kelebihan,
+                    'kekurangan' => $kekurangan,
+                    'updated_at' => date('Y-m-d H:i:s')
+                ]);
+        }
+        return redirect()->route('pemanduwisata.detail', ['nama' => $nama])->with('success', 'Pemandu wisata updated successfully.');
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -272,24 +395,21 @@ class PetaController extends Controller
             'gender' => $gender,
             'status' => "Belum diproses",
         ]);
-        
+
         // Mengirimkan kembali halaman ini kehalaman sebelumnya yang dipunya
         return view('user.order_done');
     }
+
     public function rate(Request $request, $store)
     {
         $rate = $request->input('rate');
-        
 
-        DB::table($store.'_rate')->insert([
+
+        DB::table($store . '_rate')->insert([
             'rate' => $rate,
-            
+
         ]);
-        
+
         return view('peta.pemanduwisata');
     }
-    
-    
-   
-   
 }

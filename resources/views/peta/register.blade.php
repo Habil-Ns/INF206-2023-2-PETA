@@ -35,7 +35,7 @@
                         <input class="my-input" type="password" id="password" name="password" placeholder="Kata Sandi">
                     </div>
                     <div class="card-button">
-                        <button type="submit">Masuk</button>
+                        <button type="submit">Daftar</button>
                     </div>
                 </form>
                 <div class="register">

@@ -30,7 +30,7 @@ galeri.addEventListener('click', function() {
     submenugaleri.classList.toggle('active');
     submenuwisata.classList.remove('active');
     submenupemandu.classList.remove('active');
-    submenupengguna.classList.remove('active');
+    submenuhubungi.classList.remove('active');
 });
 
 const wisataBandaAceh = document.querySelector('.nav_item:nth-of-type(4)');
@@ -39,7 +39,7 @@ wisataBandaAceh.addEventListener('click', function() {
     submenuwisata.classList.toggle('active');
     submenugaleri.classList.remove('active');
     submenupemandu.classList.remove('active');
-    submenupengguna.classList.remove('active');
+    submenuhubungi.classList.remove('active');
 });
 
 const pemanduWisata = document.querySelector('.nav_item:nth-of-type(5)');
@@ -48,14 +48,13 @@ pemanduWisata.addEventListener('click', function() {
     submenupemandu.classList.toggle('active');
     submenugaleri.classList.remove('active');
     submenuwisata.classList.remove('active');
-    submenupengguna.classList.remove('active');
+    submenuhubungi.classList.remove('active');
 });
 
-const userImg = document.querySelector('.img_pengguna');
-const submenupengguna = document.querySelector('.submenupengguna');
-
-userImg.addEventListener('click', function() {
-    submenupengguna.classList.toggle('active');
+const hubungipenilaian = document.querySelector('.nav_item:nth-of-type(6)');
+const submenuhubungi = hubungipenilaian.querySelector('.submenuhubungi');
+hubungipenilaian.addEventListener('click', function() {
+    submenuhubungi.classList.toggle('active');
     submenugaleri.classList.remove('active');
     submenuwisata.classList.remove('active');
     submenupemandu.classList.remove('active');
@@ -144,7 +143,6 @@ function initMap() {
           boxPadding: 3
         }
       }
-    }
-  })
+    }
+  })
 })()
-

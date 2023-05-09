@@ -7,11 +7,11 @@
 @section('content')
     <div class="container my-5" id="daftar_pemandu">
         <div class="title">
-            <h1>Halaman tidak bisa diakses</h1>
+            <h1>Anda telah diterima sebagai Pemandu Wisata</h1>
         </div>
         <div class="alert alert-success">
-            <p>Jika ingin mendaftar, silahkan register dan login terlebih dahulu</p>
+            <p>Selamat untuk kedepannya dan sukses dalam menjalankan tugas dalam sebagai pemandu dan tunggu anda dipesan oleh wisatawan</p>
         </div>
-        <a href="{{ url('peta/login') }}" class="btn btn-primary">Ke Menu Masuk</a>
+        <a href="{{ url('dashboard') }}" class="btn btn-primary">Kembali ke Dashboard</a>
     </div>
 @endsection

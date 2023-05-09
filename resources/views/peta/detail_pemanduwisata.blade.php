@@ -115,7 +115,6 @@
                     <label for="kekurangan" class="form-label">Kekurangan</label>
                     <textarea class="form-control detail-input" id="kekurangan" rows="3" style="background-color: #E2F4FF; border: 1px solid black;" readonly>{{$registration->kekurangan}}</textarea>
                 </div>
-
             </div>
             <div class="foto-pemandu">
                 @if($registration->gambar)
@@ -123,17 +122,24 @@
                 @else
                     <img src="{{ asset('images/profile_pemandu.jpg') }}" alt="Profile Pemandu Wisata" width="260px" height="260px">
                 @endif
-                    <button class="button-kembali">
-                        <a href="{{url ("peta/pemanduwisata")}}" class="btn btn-kembali">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-arrow-return-left" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
-                            </svg>
-                            Kembali
-                        </a>
-                    </button>
-            </div>
+                <div style="margin-top: 156%">
+                    @if (auth()->check() && (auth()->user()->can('admin') || (auth()->user() && $registration->status === 'Cuti' && $registration->user_id === auth()->user()->id)))
+                    <div style="display: inline-block; margin-right:10px;" >
+                        <a href="{{ route('registration.edit', ['id' => $registration->id]) }}" class="btn btn-primary">Update</a>
+                    </div>
+                    @endif
+                    <div style="display: inline-block;">
+                        <button class="button-kembali">
+                            <a href="{{ url('peta/pemanduwisata') }}" class="btn btn-kembali">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z" />
+                                </svg>
+                                Kembali
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>            
         </div>
     </div>
 @endif
