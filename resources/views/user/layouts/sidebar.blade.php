@@ -33,6 +33,12 @@
                     Daftar Saran
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/rating') ? 'active' : ''}}" href="/dashboard/rating">
+                    <span data-feather="star" class="align-text-bottom"></span>
+                    Rating view
+                </a>
+            </li>
         </ul>
         @endcan
     </div>

@@ -20,8 +20,8 @@
                             <input type="number" name="umur" class="form-control input_pendaftaran" placeholder="Umur">
                         </div>
                         <div class="col-sm-10">
-                            <select class="form-select gender-option" name="gender" aria-label="Default select example">
-                                <option class="gender-option" selected>Jenis Kelamin</option>
+                            <select class="form-select gender-option" name="gender" aria-label="Default select example" required>
+                                <option class="gender-option" selected disabled>Jenis Kelamin</option>
                                 <option class="gender-option" value="Pria">Pria</option>
                                 <option class="gender-option" value="Wanita">Wanita</option>
                             </select>

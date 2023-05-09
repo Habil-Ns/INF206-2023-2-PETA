@@ -189,11 +189,47 @@ class PetaController extends Controller
             ->select('nama')
             ->get();
 
-        $view_data = [
-            'registrations' => $registrations
-        ];
+        return view('peta.penilaianpemandu', compact('registrations'));
+    }
 
-        return view('peta.penilaianpemandu', $view_data);
+    public function storeRate(Request $request)
+    {
+        $namapenilai = $request->input('namapenilai');
+        $rate = $request->input('rate');
+        $pemandu = $request->input('pemandu');
+    
+        $pemanduRegistration = DB::table('registrations')->where('nama', $pemandu)->first();
+    
+        if ($pemanduRegistration) {
+            DB::table('rates')->insert([
+                'namapenilai' => $namapenilai,
+                'rate' => $rate,
+                'pemandu' => $pemanduRegistration->nama,
+            ]);
+    
+            // Calculate average rating for the pemandu
+            $averageRating = DB::table('rates')
+                ->where('pemandu', $pemanduRegistration->nama)
+                ->avg('rate');
+    
+            // Update the average rating in the registrations table
+            DB::table('registrations')
+                ->where('nama', $pemanduRegistration->nama)
+                ->update(['rate' => $averageRating]);
+        }
+    
+        return view('user.rating_done');
+    }    
+
+    public function showrate()
+    {   
+        $this->authorize('admin');
+        $registrations = DB::table('registrations')
+            ->select('nama')
+            ->distinct()
+            ->get();
+
+        return view('user.admin.ratings.index', compact('registrations'));
     }
 
     public function login()

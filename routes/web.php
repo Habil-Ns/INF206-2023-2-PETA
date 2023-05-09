@@ -45,7 +45,7 @@ Route::get('peta/hubungi&penilaian/hubungikami', [PetaController::class, 'hub'])
 Route::post('peta/hubungi&penilaian/hubungikami', [PetaController::class, 'storesaran']);
 
 Route::get('peta/hubungi&penilaian/penilaianpemandu', [PetaController::class, 'penilaianPemandu']);
-Route::post('peta/hubungi&penilaian/penilaianpemandu', [PetaController::class, 'storepenilaian']);
+Route::post('peta/hubungi&penilaian/penilaianpemandu', [PetaController::class, 'storeRate']);
 
 Route::get('peta/pendaftaran', [PetaController::class, 'pendaftaran']);
 
@@ -73,6 +73,7 @@ Route::get('/dashboard', function () {
 })->middleware('auth');
 
 Route::resource('/dashboard/orders', DashboardOrdersController::class)->middleware('auth');
+Route::get('/dashboard/rating', [PetaController::class, 'showrate'])->middleware('admin');
 
 Route::resource('/dashboard/cvpemandu', AdminDashboardController::class)->middleware('admin');
 Route::get('/dashboard/daftarsaran', [PetaController::class, 'daftarsaran'])->middleware('admin');
