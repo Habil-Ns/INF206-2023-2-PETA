@@ -7,7 +7,7 @@
 
 @section('content')
 @if(auth()->check() && auth()->user()->can('admin') && $registration->status === 'Pending')
-    <div class="container" id="pemandu_wisata">
+    <div class="container" id="pemandu_wisata" style="margin-top: 3.5rem;">
         <div class="title">
             <h1>Pemandu Wisata</h1>
         </div>
@@ -124,8 +124,8 @@
                 @endif
                 <div style="margin-top: 156%">
                     @if (auth()->check() && (auth()->user()->can('admin') || (auth()->user() && $registration->status === 'Cuti' && $registration->user_id === auth()->user()->id)))
-                    <div style="display: inline-block; margin-right:10px;" >
-                        <a href="{{ route('registration.edit', ['id' => $registration->id]) }}" class="btn btn-primary">Update</a>
+                    <div class="button-update-detail">
+                        <a href="{{ route('registration.edit', ['id' => $registration->id]) }}" class="btn btn-update" id="btn-update">Update</a>
                     </div>
                     @endif
                     <div style="display: inline-block;">

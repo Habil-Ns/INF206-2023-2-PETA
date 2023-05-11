@@ -415,6 +415,10 @@ span{
     visibility: visible;
 }
 /* =========================== Halaman Detail Pemandu ================================= */
+#pemandu_wisata{
+    margin-top: 3.5rem;
+}
+
 .detail-content {
     display: flex;
     justify-content: space-between;
@@ -424,8 +428,63 @@ span{
     margin: 2rem 0;
 }
 
-.button-update:hover{
-    background-color: var(--button-color);
+.mb-1 label{
+    font-family: var(--text-font);
+    font-size: var(--label-size);
+    color: var(--text-label-color);
+    font-weight: var(--text-weight);
+}
+  
+
+  .form-edit{
+    position: relative; /* Menambahkan properti position relative pada form-edit */
+    width: 100%;
+  }
+   
+
+  .detail-content {
+    display: flex;
+    justify-content: space-between;
+    background-color: #76E1BC;
+    border-radius: 3.125rem;
+    padding: 1.8rem 3rem;
+    margin: 2rem 0;
+}
+  
+  .biodata-pemandu_update {
+    width: 60%;
+    float: left;
+  }
+
+  .foto-pemandu_update {
+    width: 30%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .button-update-detail{
+    display: inline-block; 
+    margin-right:10px; 
+    background-color: var(--brand-color); 
+    border-radius: 10px;
+    padding: 0 .8em;
+  }
+
+  .button-update {
+    position: absolute;
+    bottom: 0; 
+    right: 0; 
+    margin: 1rem; 
+    background-color: var(--brand-color);
+    border-radius: 10px;
+    padding: 0 .8em;
+  }
+
+  .button-update:hover, .button-update-detail:hover{
+    background-color: var(--brand-color);
     opacity: .7;
   }
 
@@ -435,11 +494,36 @@ span{
     font-weight: 400;
   }
 
-.mb-1 label{
+  
+  .mb-1 label {
     font-family: var(--text-font);
     font-size: var(--label-size);
     color: var(--text-label-color);
-    font-weight: var(--text-weight);
+    font-weight: var(--text-weight);}
+
+.form-control{
+    border: 1px solid #252525;
+}
+
+.detail-input{
+    font-family: var(--text-font);
+}
+
+.button-kembali{
+    margin-top: auto;
+    border-radius: 10px;
+    border: none;
+}
+
+.button-kembali a{
+    font-family: var(--brand-font);
+    color: var(--text-color);
+    text-align: center;
+    text-decoration: none;
+}
+
+a.btn-kembali svg {
+    margin-right: 0.3rem;
 }
 
 .biodata-pemandu {
