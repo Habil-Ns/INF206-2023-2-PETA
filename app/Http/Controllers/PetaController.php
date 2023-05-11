@@ -22,18 +22,19 @@ class PetaController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    
     public function pemanduwisata()
     {
         $registrations = DB::table('registrations')
-            ->select('nama', 'gambar', 'status', 'rate')
-            ->where('status', '<>', 'Pending')
-            ->get();
+        ->select('registrations.nama', 'registrations.gambar', 'registrations.status', 'registrations.rate', DB::raw('COUNT(rates.namapenilai) as total_ratings'))
+        ->leftJoin('rates', 'registrations.nama', '=', 'rates.pemandu')
+        ->where('registrations.status', '<>', 'Pending')
+        ->groupBy('registrations.nama', 'registrations.gambar', 'registrations.status', 'registrations.rate')
+        ->get();    
 
         $view_data = [
-            'registrations' => $registrations
-           
+            'registrations' => $registrations           
         ];
-       
 
         return view('peta.pemanduwisata', $view_data);
     }
