@@ -20,6 +20,8 @@ Atur konfigurasi databasenya di dalam file .env, sebelum itu jalankan dibawah in
 
     cp .env.example .env
     
+Buat folder 'gambar' dan 'cv' di dalam folder public laravelnya untuk menampung gambar pemandu dan cv
+
 ## Menjalankan Website PETA
  Akun Admin
  
@@ -38,7 +40,7 @@ Atur konfigurasi databasenya di dalam file .env, sebelum itu jalankan dibawah in
  
     npm run dev
  
- Terakhir jalan websitenya
+ Terakhir jalankan websitenya
  
     php artisan serve
        
