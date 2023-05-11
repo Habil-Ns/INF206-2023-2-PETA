@@ -6,7 +6,7 @@
     </div>
     <div class="content">
         <div class="card card-info card-outline">
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 @foreach ($registrations as $registration)
                 <div class="form-group row">
                     <div class="col-sm-12">
@@ -18,6 +18,7 @@
                                 <th>No</th>
                                 <th>Nama Penilai</th>
                                 <th>Rating</th>
+                                <th>Action</th>
                             </tr>
                             @foreach (DB::table('registrations')
                                 ->join('rates', 'registrations.nama', '=', 'rates.pemandu')
@@ -28,6 +29,13 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $rating->namapenilai }}</td>
                                     <td>{{ $rating->rate }}</td>
+                                    <td>
+                                        <form action="{{ route('rating.destroy', ['namapemandu' => $registration->nama, 'namapenilai' => $rating->namapenilai]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="badge bg-danger" onclick="return confirm('Are you sure you want to delete this rating?')"><span data-feather="x-circle"></span></button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                             <tr>
