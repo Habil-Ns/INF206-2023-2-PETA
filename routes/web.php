@@ -108,3 +108,4 @@ Route::delete('orders/{nama}', function ($nama) {
     DB::table('orders')->where('nama', $nama)->delete();
     return redirect('/dashboard/orders')->with('success', 'Orders deleted successfully');
 })->middleware('auth');
+Route::delete('rating/{namapemandu}/{namapenilai}', [PetaController::class, 'destroy'])->name('rating.destroy')->middleware('admin');

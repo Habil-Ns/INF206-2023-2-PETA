@@ -6,7 +6,7 @@
     </div>
     <div class="content">
         <div class="card card-info card-outline">
-            <div class="card-body">
+            <div class="card-body table-responsive">
                 <table class="table table-bordered text-center">
                     <tr>
                         <th>#</th>

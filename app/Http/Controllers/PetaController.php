@@ -330,10 +330,23 @@ class PetaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($namapemandu, $namapenilai)
     {
-        //
-    }
+        DB::table('rates')
+            ->where('pemandu', $namapemandu)
+            ->where('namapenilai', $namapenilai)
+            ->delete();
+    
+        $averageRating = DB::table('rates')
+            ->where('pemandu', $namapemandu)
+            ->avg('rate');
+    
+        DB::table('registrations')
+            ->where('nama', $namapemandu)
+            ->update(['rate' => $averageRating]);
+    
+        return redirect()->back()->with('success', 'Rating deleted successfully.');    
+    }    
 
     public function authenticate(Request $request)
     {

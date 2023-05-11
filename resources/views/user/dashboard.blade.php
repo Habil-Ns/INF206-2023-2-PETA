@@ -7,7 +7,7 @@
             @endif
         
     </div>
-
+    <a href="/peta" class="btn btn-success"><span data-feather="home"></span> Kembali ke Beranda</a>
     @can('admin')
         <div class="content">
             <div class="container-fluid">
@@ -72,7 +72,7 @@
                                         @php
                                         $count = 0;
                                         foreach ($registrations as $registration) {
-                                            if ($registration->status == "Cuti" || $registration->status == 'Diterima') {
+                                            if ($registration->status == 'Diterima') {
                                                 $count++;
                                             }
                                         }
@@ -80,7 +80,7 @@
                                     @endphp
                                     </p>
                                 @foreach ($registrations as $registration)
-                                    @if ($registration->status == 'Diterima' || $registration->status == 'Cuti')
+                                    @if ($registration->status == 'Diterima')
                                     <div class="p-3 d-flex justify-content-between align-items-center"
                                     style="background-color: #A8D672; border-radius:10px; font-family:'Source Serif Pro'; font-weight:600; text-align:left; margin-bottom: 15px">
                                     <p class="m-0">Nama : {{ $registration->nama }}</p>
@@ -107,12 +107,52 @@
                                 </div>
                                 @endforeach
                             </div>
+                            <div class="p-1">
+                                <p class="text-center"
+                                    style="font-family: 'Source Serif Pro'; font-size:'30px'; font-weight:700">
+                                    Daftar Pemandu Wisata Cuti: 
+                                    @php
+                                    $count = 0;
+                                    foreach ($registrations as $registration) {
+                                        if ($registration->status == "Cuti") {
+                                            $count++;
+                                        }
+                                    }
+                                    echo $count;
+                                @endphp
+                                </p>
+                            @foreach ($registrations as $registration)
+                                @if ($registration->status == 'Cuti')
+                                <div class="p-3 d-flex justify-content-between align-items-center"
+                                style="background-color: #A8D672; border-radius:10px; font-family:'Source Serif Pro'; font-weight:600; text-align:left; margin-bottom: 15px">
+                                <p class="m-0">Nama : {{ $registration->nama }}</p>
+                                <div class="d-flex">
+                                    <form method="POST"
+                                        action="{{ url("peta/pemanduwisata/$registration->nama/terima") }}">
+                                        @csrf
+                                        @method('PUT')
+                                            <button
+                                            style="border-radius:10px; font-family:'Patua One'; font-weight: 400; color:#000000"
+                                            type="submit" class="btn btn-terima btn-primary">
+                                            Aktif</button>
+                                    </form>
+                                    <form action="{{ url('peta/pemanduwisata/' . $registration->nama) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button
+                                        style="border-radius:10px; font-family:'Patua One'; font-weight: 400; color:#000000; margin-left:10px;"
+                                        type="submit" class="btn btn-tolak btn-danger"
+                                        onclick="return confirm('Are you sure you want to reject this person?')">Pecat</button>
+                                    </form>
+                                </div>
+                                @endif
+                            </div>
+                            @endforeach
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     @endcan
-
-
 @endsection
