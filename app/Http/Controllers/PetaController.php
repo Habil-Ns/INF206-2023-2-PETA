@@ -382,6 +382,15 @@ class PetaController extends Controller
             ->get();
         return view('user.admin.saran.daftarsaran', compact('sarans'));
     }
+    
+    public function destroySaran($nama)
+    {
+        DB::table('sarans')
+            ->where('nama', $nama)
+            ->delete();
+
+        return redirect()->back()->with('success', 'saran berhasil dihapus.');
+    }
 
     public function storesaran(Request $request)
     {

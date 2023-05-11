@@ -77,6 +77,7 @@ Route::get('/dashboard/rating', [PetaController::class, 'showrate'])->middleware
 
 Route::resource('/dashboard/cvpemandu', AdminDashboardController::class)->middleware('admin');
 Route::get('/dashboard/daftarsaran', [PetaController::class, 'daftarsaran'])->middleware('admin');
+Route::delete('/dashboard/daftarsaran/{nama}', [PetaController::class, 'destroySaran'])->middleware('admin')->name('saran.destroy');
 
 Route::delete('peta/pemanduwisata/{nama}', function ($nama) {
     DB::table('registrations')->where('nama', $nama)->delete();
@@ -97,12 +98,19 @@ Route::put('cvpemandu/{nama}', function ($nama) {
     return redirect('/dashboard/cvpemandu')->with('success', 'Tour Guide is holiday');
 })->middleware('admin');
 
-Route::put('orders/{nama}', function ($nama) {
+Route::put('orders/{nama}/selesai', function ($nama) {
+    DB::table('orders')
+        ->where('nama', $nama)
+        ->update(['status' => 'Selesai']);
+    return redirect('/dashboard/orders')->with('success', 'Orders status updated successfully');
+})->middleware('auth')->name('orders.selesai');
+
+Route::put('orders/{nama}/terima', function ($nama) {
     DB::table('orders')
         ->where('nama', $nama)
         ->update(['status' => 'Diproses']);
     return redirect('/dashboard/orders')->with('success', 'Orders status updated successfully');
-})->middleware('auth');
+})->middleware('auth')->name('orders.terima');
 
 Route::delete('orders/{nama}', function ($nama) {
     DB::table('orders')->where('nama', $nama)->delete();

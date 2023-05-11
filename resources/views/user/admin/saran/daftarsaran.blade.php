@@ -20,6 +20,13 @@
                         <td>{{ $saran->nama }}</td>
                         <td>{{ $saran->email }}</td>
                         <td>{{ $saran->komentar }}</td>
+                        <td>
+                            <form action="{{ route('saran.destroy', ['nama' => $saran->nama]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this row?')">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </table>

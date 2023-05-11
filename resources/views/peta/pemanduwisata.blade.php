@@ -19,8 +19,9 @@
                         <div class="rate">
                             <p class="penilaian-text">Penilaian:</p>
                             <label for="star5a" title="5 Stars"></label>
-                            <p style="font-size: 1.1rem; margin-top: 0.5rem; color: #252525;">
-                                {{ $registration->rate }}/5 ({{ $registration->total_ratings }} ulasan)
+                            <p style="font-size: 1.1rem; margin-top: 0.5rem;">
+                                <span style="font-size: 1.2rem; color: #252525">{{ $registration->rate }}/5</span>
+                                <span style="font-size: 0.9rem; color: #252525">({{ $registration->total_ratings }} ulasan)</span>
                             </p>
                         </div>
 

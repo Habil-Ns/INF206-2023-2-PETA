@@ -28,11 +28,19 @@
               <td>{{ $order->gender}}</td>
               <td>{{ $order->status }}</td>
               <td class="d-flex gap-2">
-                <form method="POST" action="{{ url("orders/$order->nama") }}">
-                  @csrf
-                  @method('PUT')
-                    <button type="submit" class="btn btn-success btn-terima_wisatawan" style="font-family:'Patua One'; font-weight: 400;">Terima</button>
+                @if ($order->status == 'Diproses')
+                <form method="POST" action="{{ route('orders.selesai', ['nama' => $order->nama]) }}">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-success btn-terima_wisatawan" style="font-family:'Patua One'; font-weight: 400;">Selesai</button>
                 </form>
+                @else
+                    <form method="POST" action="{{ route('orders.terima', ['nama' => $order->nama]) }}">
+                        @csrf
+                        @method('PUT')
+                        <button type="submit" class="btn btn-success btn-terima_wisatawan" style="font-family:'Patua One'; font-weight: 400;">Terima</button>
+                    </form>
+                @endif            
                 <form action="{{ url('orders/' . $order->nama) }}" method="POST">
                   @csrf
                   @method('DELETE')
