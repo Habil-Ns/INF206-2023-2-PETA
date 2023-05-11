@@ -25,13 +25,15 @@ class PetaController extends Controller
     public function pemanduwisata()
     {
         $registrations = DB::table('registrations')
-            ->select('nama', 'gambar', 'status')
+            ->select('nama', 'gambar', 'status', 'rate')
             ->where('status', '<>', 'Pending')
             ->get();
 
         $view_data = [
             'registrations' => $registrations
+           
         ];
+       
 
         return view('peta.pemanduwisata', $view_data);
     }
@@ -219,6 +221,7 @@ class PetaController extends Controller
         }
     
         return view('user.rating_done');
+
     }    
 
     public function showrate()
@@ -228,7 +231,8 @@ class PetaController extends Controller
             ->select('nama')
             ->distinct()
             ->get();
-
+        
+            
         return view('user.admin.ratings.index', compact('registrations'));
     }
 

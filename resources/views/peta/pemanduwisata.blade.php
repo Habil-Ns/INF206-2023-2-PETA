@@ -17,20 +17,13 @@
 
                         <div class="rate">
                             <p class="penilaian-text">Penilaian:</p>
-                            <span>
-                                <input type="radio" id="five" name="rate" value="5">
-                                <label for="five"></label>
-                                <input type="radio" id="four" name="rate" value="4">
-                                <label for="four"></label>
-                                <input type="radio" id="three" name="rate" value="3">
-                                <label for="three"></label>
-                                <input type="radio" id="two" name="rate" value="2">
-                                <label for="two"></label>
-                                <input type="radio" id="one" name="rate" value="1">
-                                <label for="one"></label>
-                                <input type="button" onclick="submitRating()" value="Submit">
-                                <span id="rating-text"></span>
-                            </span>
+                            <label for="star5a" title="5 Stars"></label>
+                            <p style="font-size: 1.1rem; margin-top: 0.5rem; color: #252525;">
+                                {{ $registration->rate }}/5
+                              </p>
+                              
+                              
+                              
                         </div>
 
                         <script>

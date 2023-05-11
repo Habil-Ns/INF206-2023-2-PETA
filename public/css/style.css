@@ -248,6 +248,7 @@ span{
 
 
 /*=======================  Halaman Pemandu Wisata ===========================*/
+
 #daftar_pemandu{
     margin-top: 3.3rem;
 }
@@ -271,12 +272,14 @@ span{
 }
 
 .rate label:before {
-  content: '★';
+  content: '★' ;
+  color: gold ;
+  box-shadow: goldenrod;
 }
 
 .rate :not(:checked) > label:hover,
 .rate :not(:checked) > label:hover ~ label {
-  color: gold;
+  color: black;
 }
 
 .rate .result:before {
