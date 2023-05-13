@@ -33,13 +33,13 @@
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
                                 <h6 class="pendaftaran-footer">
-                                    <a href="{{ url('peta/pemanduwisata/pendaftaran') }}"
+                                    <a href="{{ url('peta/pendaftaran') }}"
                                         class="footer-service-text">Pendaftaran Pemandu</a>
                                 </h6>
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
                                 <h6 class="hubungi-footer">
-                                    <a href="{{ url('peta/hubungikami') }}" class="footer-service-text ms-3">Hubungi</a>
+                                    <a href="{{ url('peta/hubungi&penilaian/hubungikami') }}" class="footer-service-text ms-3">Hubungi</a>
                                 </h6>
                             </div>
                         </div>
