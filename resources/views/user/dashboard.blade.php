@@ -134,7 +134,7 @@
                                             <button
                                             style="border-radius:10px; font-family:'Patua One'; font-weight: 400; color:#000000"
                                             type="submit" class="btn btn-terima btn-primary">
-                                            Aktif</button>
+                                            Cabut Cuti</button>
                                     </form>
                                     <form action="{{ url('peta/pemanduwisata/' . $registration->nama) }}" method="POST">
                                         @csrf
@@ -153,6 +153,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     @endcan
 @endsection
